@@ -32,16 +32,16 @@ namespace Lab3
             Emp.Gender = CustomConsole.ReadString();
 
             Console.WriteLine("Enter address 1 : ");
-            Emp.Address1 =  CustomConsole.ReadString(); 
+            Emp.Addr.Address1 =  CustomConsole.ReadString(); 
             
             Console.WriteLine("Enter address 2 : ");
-            Emp.Address2 =  CustomConsole.ReadString();
+            Emp.Addr.Address2 =  CustomConsole.ReadString();
 
             Console.WriteLine("Enter City name : ");
-            Emp.City =  CustomConsole.ReadString();
+            Emp.Addr.City =  CustomConsole.ReadString();
 
             Console.WriteLine("Enter Pincode : ");
-            Emp.Pincode =  CustomConsole.ReadInt();
+            Emp.Addr.Pincode =  CustomConsole.ReadInt();
         }
 
         static void ShowData(Employee Emp)
@@ -52,10 +52,10 @@ namespace Lab3
             Console.WriteLine("Employee Gender : " + Emp.Gender);
 
             Console.WriteLine("Employee Address : --------------");
-            Console.WriteLine("Address 1 : " + Emp.Address1);
-            Console.WriteLine("Address 2 : " + Emp.Address2);
-            Console.WriteLine("City : " + Emp.City);
-            Console.WriteLine("PinCode : " + Emp.Pincode);
+            Console.WriteLine("Address 1 : " + Emp.Addr.Address1);
+            Console.WriteLine("Address 2 : " + Emp.Addr.Address2);
+            Console.WriteLine("City : " + Emp.Addr.City);
+            Console.WriteLine("PinCode : " + Emp.Addr.Pincode);
             Console.WriteLine("----------------------------------");
 
         }

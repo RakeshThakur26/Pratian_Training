@@ -16,7 +16,6 @@ namespace LabT11
 
             return Salary;
         }
-
    
         public static double GetAllowance(Employee emp)
         {

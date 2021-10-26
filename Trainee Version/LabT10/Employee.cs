@@ -15,7 +15,7 @@ namespace LabT10
         public double AllowancePercentage { get; set; }
         public int Role { get; set; }
 
-
+        // Implementation of Parameterized Constructor
         public Employee(string EmpId, string Name, double Basic, double HRA, double AllowancePercentage, int Role)
         {
             this.EmpId = EmpId;

@@ -38,7 +38,7 @@ namespace LabT11
 		    PrintLine();
 	    }
 
-        // 
+        // Defining Role Method and calling GetRoleDescription Method of Employee class
         public static string RoleDesc(int RoleId)
         {
             return(Employee.GetRoleDescription(RoleId));
@@ -51,6 +51,8 @@ namespace LabT11
 
             Console.WriteLine("EMP_ID\tNAME\tROLE\t\tBASIC\tHRA\tALLOW\tSALARY");
             PrintLine();
+
+            // Displying all employee details
 
     		for(int i=0;i<Employees.Length;i++)
             {

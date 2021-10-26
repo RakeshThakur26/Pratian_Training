@@ -46,6 +46,7 @@ namespace LabT10
                 Console.WriteLine(Roles.DESIGNER + ". " + RoleBuilder.GetRoleDescription(Roles.DESIGNER));
                 Role = CustomConsole.ReadInt();
 
+                // Invoking Parameterized constructor of Employee class
                 Employees[i] = new Employee(EmpId, Name, Basic, HRA, AllowancePercentage, Role);              
             }
 
