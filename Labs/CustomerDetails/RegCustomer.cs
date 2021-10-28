@@ -15,6 +15,7 @@ namespace CustomerDetails
             this.CustId = custId;
             this.Name = name;
             this.address = addr;
+
         }
 
         public void Display()

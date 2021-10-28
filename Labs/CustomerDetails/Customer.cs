@@ -8,8 +8,8 @@ namespace CustomerDetails
 {
     public class Customer
     {
-        public string CustId { get; set; }
-        public string Name { get; set; }
+        public string CustId;
+        public string Name;
         public Address address { get; set; } = new Address();
 
         public Customer (string custId, string name, Address addr)
