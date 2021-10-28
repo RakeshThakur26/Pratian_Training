@@ -43,8 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assessment.cs" />
+    <Compile Include="Course.cs" />
+    <Compile Include="HandsOnQuestion.cs" />
+    <Compile Include="Iteration.cs" />
+    <Compile Include="MCQquestion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Question.cs" />
+    <Compile Include="SkillAssureTrainingModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

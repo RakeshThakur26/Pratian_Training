@@ -10,5 +10,9 @@ namespace SkillAssureUML
     {
         public string CourseId { get; set; }
         public string CourseName { get; set; }
+
+        public List<Assessment> assessments { get; set; } = new List<Assessment>();
+
+
     }
 }

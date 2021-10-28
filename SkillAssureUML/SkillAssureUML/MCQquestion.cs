@@ -13,7 +13,7 @@ namespace SkillAssureUML
         public string option2 { get; set; }
         public string option3 { get; set; }
         public string option4 { get; set; }
-        public string RightOption { get; set; }
+        public int RightOption { get; set; }
 
 
     }
