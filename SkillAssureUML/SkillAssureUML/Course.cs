@@ -13,6 +13,5 @@ namespace SkillAssureUML
 
         public List<Assessment> assessments { get; set; } = new List<Assessment>();
 
-
     }
 }

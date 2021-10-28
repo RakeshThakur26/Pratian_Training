@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CustomerDetails
 {
-    internal class RegCustomer : Customer
+    class RegCustomer : Customer
     {
-        public double fees { get; set; }
+        public double fees;
         public RegCustomer(string custId, string name, Address addr, double fees) : base(custId, name, addr)
         {
             this.fees = fees;
