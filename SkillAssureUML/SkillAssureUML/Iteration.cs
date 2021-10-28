@@ -10,5 +10,10 @@ namespace SkillAssureUML
     {
         public int IterationNumber { get; set; }
         public string Goal { get; set; }
+        public List<Course> courses { get; set; } = new List<Course>(); 
+
+
+
     }
 }
+ 

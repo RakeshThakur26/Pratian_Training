@@ -32,21 +32,47 @@ namespace SkillAssureUML
             else
                 mcq1.marks = 0;
 
+            HandsOnQuestion handsOn = new HandsOnQuestion();
+            handsOn.QuestionDesc = "Write a program to add 2 numbers.";
+            handsOn.marks = 10;
+
+
             Assessment assessment = new Assessment();
             assessment.mcqs.Add(mcq1);
-           // assessment.handsOns.Add(null);
+            assessment.handsOns.Add(handsOn);
             assessment.AssessmentId = "1";
             assessment.Desc = "Assessment 1 on C#";
             assessment.AssessmentDate = DateTime.Today;
+            //assessment.NoOfQuestions = assessment.mcqs.Count + assessment.handsOns.Count;
 
             Course course = new Course();
+            course.CourseName = ".NET";
             course.assessments.Add(assessment);
-           course.assessments.Add(assessment);
+            //course.assessments.Add(assessment);
+
+
+            Iteration iteration1 = new Iteration();
+            iteration1.courses.Add(course);
+            iteration1.IterationNumber = 1;
+            iteration1.Goal = "Basic";
+
+            Iteration iteration2 = new Iteration();
+            iteration2.courses.Add(course);
+            iteration2.IterationNumber = 2;
+            iteration2.Goal = "Medium";
+
+            Iteration iteration3 = new Iteration();
+            iteration3.courses.Add(course);
+            iteration3.IterationNumber = 3;
+            iteration3.Goal = "Hard";
 
             SkillAssureTrainingModel skillassure = new SkillAssureTrainingModel();
             Console.WriteLine("Enter Client Name");
 
             skillassure.ClientName =  Console.ReadLine();
+            skillassure.iterations.Add(iteration1);
+            skillassure.iterations.Add(iteration2);
+            skillassure.iterations.Add(iteration3);
 
             skillassure.courses.Add(course);
 

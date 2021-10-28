@@ -20,7 +20,7 @@ namespace SkillAssureUML
             for (int i = 0; i < this.mcqs.Count; i++)
             {
                 total += this.mcqs[i].marks;
-                //total += this.handsOns[i].marks;
+                total += this.handsOns[i].marks;
             }      
 
             return total;
