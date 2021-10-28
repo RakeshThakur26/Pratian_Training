@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SkillAssureUML
 {
-    class HandsOnQuestion
+    class HandsOnQuestion : Question
     {
         public string QuestionDesc { get; set; }
         public string RefDocument { get; set; }

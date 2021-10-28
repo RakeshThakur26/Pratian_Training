@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace SkillAssureUML
 {
-    class Iterations
+    class Iteration
     {
+        public int IterationNumber { get; set; }
+        public string Goal { get; set; }
     }
 }

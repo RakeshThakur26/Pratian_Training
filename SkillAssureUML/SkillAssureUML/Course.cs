@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace SkillAssureUML
 {
-    class Courses
+    class Course
     {
+        public string CourseId { get; set; }
+        public string CourseName { get; set; }
     }
 }

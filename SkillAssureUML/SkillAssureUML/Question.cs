@@ -8,6 +8,7 @@ namespace SkillAssureUML
 {
     abstract class Question
     {
-        int marks;
+        public int marks;
+
     }
 }
