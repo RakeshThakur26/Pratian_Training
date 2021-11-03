@@ -8,8 +8,10 @@ title.style.borderBottom = "solid 5px #000";
 
 //2. 
 
+var items = document.getElementsByClassName('list-group-item');
+
 for(var i=0; i<items.length; i++){
-    if(items[i].textContent.includes("Veg")){
+    if(items[i].textContent.includes("Veg")){      
         items[i].style.color = 'green';
     }
     else{
@@ -26,6 +28,7 @@ var itemList = document.getElementById('items');
 form.addEventListener('submit', addItem);
 
 itemList.addEventListener('click', removeItem);
+
 
 function addItem(ev){
     ev.preventDefault();
@@ -51,19 +54,26 @@ function addItem(ev){
     li.appendChild(price);
     
     itemList.appendChild(li);
+    totalItem.textContent = parseInt(totalItem.textContent) + 1;
+   
+    var newprice = parseInt(document.getElementById('totalAmount').innerHTML) + 180;
+    document.getElementById('totalAmount').innerHTML = newprice;
 }
 
 function removeItem(e){
     if(e.target.classList.contains('delete')){
         if(confirm('Are You Sure?')){
+            newprice = parseInt(document.getElementById('totalAmount').innerHTML)- 100;
             var li = e.target.parentElement;
             itemList.removeChild(li);
+            totalItem.textContent -= 1;
+            document.getElementById('totalAmount').innerHTML = newprice;
         }
     }
 }
 
 
-//4.
+//4. 
 
 var oddItems = document.querySelectorAll('.list-group-item:nth-child(odd)');
 
@@ -100,6 +110,8 @@ var add = (function () {
   
 function addTip(){
     tipAmount.innerHTML = add();
+    newprice = parseInt(document.getElementById('totalAmount').innerHTML) + 180;
+    document.getElementById('totalAmount').innerHTML = newprice;
     priceCalculation(priceItems, priceDisplay);
 }
 
@@ -124,20 +136,20 @@ function priceDisplay(amount){
 }
 
 function priceCalculation(priceItems, myCallback){
-    var total = 0;
+    var totalprice = 0;
     for(var i=0; i<priceItems.length; i++){
-        total += parseInt(priceItems[i].textContent);
+        totalprice += parseInt(priceItems[i].textContent);
     }
 
-    total += parseInt(document.getElementById('tipAmount').textContent);
-    myCallback(total);
+    totalprice += parseInt(document.getElementById('tipAmount').textContent);
+    myCallback(totalprice);
 }
 
 priceCalculation(priceItems, priceDisplay);
 
 
 
-//8. 
+//8.
 
 var items = document.getElementsByClassName('list-group-item');
 function displayItemMessage(msg) {
