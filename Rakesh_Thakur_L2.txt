@@ -1,0 +1,129 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace RakeshThakurAssesment
+{
+    class Program
+    {
+        static bool isPrime(int num)
+        {
+            if (num == 1)
+                return false;
+            for (int i = 2; i * i <= num; i++)           
+                if (num % i == 0)
+                    return false;               
+            return true;
+        }
+
+        static bool isAscending(string str)
+        {
+            if (str.Length == 1)
+                return false;
+
+            int x = Convert.ToInt32(str[0]);
+            for (int i = 1; i < str.Length; i++)
+            {
+                int y = Convert.ToInt32(str[i]);
+                if (x >= y)
+                    return false;
+                x = y;
+            }
+            return true;
+        } 
+        
+        static bool isDescending(string str)
+        {
+            if (str.Length == 1)
+                return false;
+
+            int x = Convert.ToInt32(str[0]);
+            for (int i = 1; i < str.Length; i++)
+            {
+                int y = Convert.ToInt32(str[i]);
+                if (x <= y)
+                    return false;
+                x = y;
+            }
+            return true;
+        }
+
+        static void Main(string[] args)
+        {
+            int count = 1;
+            List<string> list = new List<string>();
+
+            Console.WriteLine("The series is : ");
+            for (int i = 2; count < 10000; i++)
+            {
+                if (isPrime(i))
+                {
+                    Console.Write(count + " ");
+                    list.Add(count.ToString());
+                    count += i;
+                }                             
+            }
+            List<string> ascending = new List<string>();
+            List<string> descending = new List<string>();
+            List<string> nor = new List<string>();
+            List<string> duplicate = new List<string>();
+
+            foreach (var item in list)
+            {
+                for (int i = 0; i < item.Length; i++)
+                {   
+                    if (isAscending(item))
+                    {
+                        ascending.Add(item);
+                        break;
+                    }
+
+                    else if (isDescending(item))
+                    {
+                        descending.Add(item);
+                        break;
+                    }
+
+                    else if (item.Contains(item[i]) && item.Length != 1)
+                    {
+                        duplicate.Add(item);
+                        break;
+                    }
+                   else  if (!isAscending(item) && !isDescending(item) && !(item.Contains(item[i])) && item.Length != 1)
+                    {
+                        nor.Add(item);
+                        break;
+                    }
+
+                }             
+            }
+         
+            Console.Write("\nDescending list : ");
+            foreach (var item in descending)
+            {
+                Console.Write(item + " ");
+            }
+            
+            Console.Write("\nAscending list : ");
+            foreach (var item in ascending)
+            {
+                Console.Write(item + " ");
+            }
+
+            Console.WriteLine("\nNeither Ascending nore Descending");
+            foreach (var item in nor)
+            {
+                Console.Write(item + " ");
+            }
+
+            Console.Write("\n Have occurence more than once  : ");
+            foreach (var item in duplicate)
+            {
+                Console.Write(item + " ");
+            }
+            Console.ReadLine();
+        }
+    }
+}

@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace RakeshThakurAssesment
+{
+    class Program
+    {
+        
+        static void Main(string[] args)
+        {
+            int N;
+            Console.WriteLine("Enter the size of array (N) :");
+            N = Convert.ToInt32(Console.ReadLine());
+
+            int[] array = new int[N];
+
+            Console.WriteLine("Enter elements : ");
+            for (int i = 0; i < N; i++)
+                array[i] = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Smallest Postive integer in an array is : " + SmallestPositiveInteger(array));
+           
+            Console.ReadLine();
+        }
+
+        static int SmallestPositiveInteger(int[] array)
+        {
+           
+            int largest = array[0];
+            for (int i = 1; i < array.Length; i++)
+            {
+                if(array[i] < 0)
+                    return 1;
+
+                if (array[i] > largest)
+                    largest = array[i];
+            }
+            return largest + 1;
+        }
+    }
+}

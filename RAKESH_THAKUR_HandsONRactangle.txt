@@ -1,0 +1,24 @@
+public class Rectangle {
+	double length;
+	double breadth;
+	
+	Rectangle(double length, double breadth)	{
+		this.breadth = breadth;
+		this.length = length;
+	}
+	
+	public double area() {
+		return (this.breadth * this.length);
+	}
+}
+
+class HandsOn3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Rectangle rect1 = new Rectangle (14.45, 20.67);
+		System.out.println("The area of rectangle is = " + rect1.area());
+
+	}
+
+}

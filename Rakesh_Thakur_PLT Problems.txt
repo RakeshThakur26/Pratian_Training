@@ -1,0 +1,600 @@
+2. Report Card
+
+namespace PLT_problems
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            StudentDetails sd = new StudentDetails();
+            sd.GetStudentDetails();
+            sd.PrintDetails();
+            sd.SecuredDetails();
+
+            Console.ReadLine();
+        }
+    }
+
+    class StudentDetails
+    {
+        public string name;
+        public int sub1;
+        public int sub2;
+        public int sub3;
+        int avg = 0;
+        int total = 0;
+
+	// Taking input Data of student from user
+        public void GetStudentDetails()
+        {
+            Console.WriteLine("Enter name of student: ");
+            name = Console.ReadLine();
+            
+            Console.WriteLine("Enter 3 Subject marks ");
+            sub1 = Convert.ToInt32(Console.ReadLine());
+            sub2 = Convert.ToInt32(Console.ReadLine());
+            sub3 = Convert.ToInt32(Console.ReadLine());   
+        }
+
+	// Checking whether student is passed all subjects
+	public bool isFail(int s1, int s2, int s3)
+        {
+            if (s1 < 35 && s2 < 35 && s3 < 35)
+                return true;
+
+            return false;
+        }
+
+	// Printing Marks details of student
+        public void PrintDetails()
+        {
+            this.total = sub1 + sub2 + sub3;
+            this.avg = total / 3;
+            Console.WriteLine("Subject 1 : "+ sub1 + "Subject 2 : " + sub2 + "Subject 3 : "+ sub3);
+            Console.WriteLine("Average is = " + this.avg);
+            Console.WriteLine("Total marks are = " + this.total);
+        }
+	
+         public void SecuredDetails()
+        {
+            if (avg >= 60 && isFail(sub1,sub2,sub3))
+                Console.WriteLine("First Class");
+            else if (avg >= 50 && avg < 60 && isFail(sub1, sub2, sub3))
+                Console.WriteLine("Second class");
+            else if (avg >= 35 && avg < 50 && isFail(sub1, sub2, sub3))
+                Console.WriteLine("Pass class");
+            else
+                Console.WriteLine("Failed");
+        }
+    }
+}
+
+*********************************************
+
+3. Displaying Series
+
+class Program
+    {
+        static void Main(string[] args)
+        {
+                Console.WriteLine("Enter  n ");
+                int n = Convert.ToInt32(Console.ReadLine());
+                for (int i = 1; i <= n; i++)
+                {
+                    Console.Write(i*i - i + 1 + " ");
+                }
+                Console.WriteLine();
+                Console.ReadLine();
+      
+        }
+    }
+
+******************************************
+
+1. Tax Calculator
+
+namespace PLT_problems
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+
+            Console.WriteLine("Enter name");
+            string name = Console.ReadLine();
+
+            Console.WriteLine("Enter employee ID");
+            string emp_id = Console.ReadLine();
+
+            Console.WriteLine("Enter monthly basic in rupees");
+            int basic = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter monthly special allowances in rupees");
+            int spec_Allowance = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter percentage of bonus");
+            int perce_Bonus = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter monthly tax saving in rupees");
+            int monthlyTaxSaving = Convert.ToInt32(Console.ReadLine());
+
+            int grossSalary = (basic * 12) + (spec_Allowance * 12);
+            grossSalary = grossSalary + ((grossSalary * perce_Bonus) / 100);
+
+            int netTaxSaving;
+
+            double tax = 0.0;
+
+            if ((monthlyTaxSaving * 12) >= 150000)
+                netTaxSaving = 150000;
+            else
+            {
+                netTaxSaving = monthlyTaxSaving * 12;
+
+                int tax_Income = grossSalary - netTaxSaving;
+
+                if (tax_Income <= 250000)
+                {
+                    Console.WriteLine("No tax applicable");
+                }
+                else if ((tax_Income > 250000) && (tax_Income <= 500000))
+                {
+                    tax_Income -= 250000;
+                    tax = tax_Income * 5 / 100;
+                }
+                else if ((tax_Income > 500000) && (tax_Income <= 1000000))
+                {
+                    tax = (250000 * 5 / 100) + ((tax_Income - 500000) * 20 / 100);
+                }
+                else if (tax_Income > 1000000)
+                {
+                    tax = (250000 * 5 / 100) + (500000 * 20 / 100) + ((tax_Income - 1000000) * 30 / 100);
+                }
+
+                Console.WriteLine("Gross Monthly salary : " + (basic + spec_Allowance));
+                Console.WriteLine("Gross Annual Salary : " + grossSalary);
+                Console.WriteLine("Net Taxable income : " + tax_Income);
+                Console.WriteLine("Tax : " + tax);
+
+
+                Console.ReadLine();
+            }
+        }
+}
+******************************************************
+// 3. Simple interest 
+
+ class Program
+ {
+    static void Main(string[] args)
+        {
+	    Console.Write("Enter pricipal : ");
+            int princ = Convert.ToInt32(Console.ReadLine());
+            Console.Write("\nEnter rate  : ");
+            int rate = Convert.ToInt32(Console.ReadLine());
+            Console.Write("\nEnter time : ");
+            double time = Convert.ToDouble(Console.ReadLine());
+
+            double si = ((princ * rate * time)) / 100;
+            Console.WriteLine("\nSimple interest = : " + si);
+	 }
+}
+
+******************************************************
+// 	Even Odd
+  
+
+ class Program
+ {
+    static void Main(string[] args)
+        {
+		
+            Console.Write("Enter Number : ");
+            int num = Convert.ToInt32(Console.ReadLine());
+
+            if ((num & 1) == 1)
+                Console.WriteLine("\n" + num + " is Odd number");
+            else
+                Console.WriteLine("\n" + num + " is Even number");
+	 }
+}
+
+******************************************************
+// 	Separating fraction and decimal
+  
+
+ class Program
+ {
+    static void Main(string[] args)
+        {
+	    Console.Write("Enter Number : ");
+            string[] str = Console.ReadLine().Split('.');
+
+            int dec = Convert.ToInt32(str[0]);
+            int fraction = Convert.ToInt32(str[1]);
+
+            Console.WriteLine("Decimal = " + dec + ",  Fraction = " + fraction);
+	 }
+}
+
+*******************************************************
+
+// 4. Vendor Transaction
+
+namespace PLT_problems
+{
+   class Program
+    {
+        public static bool CheckPrime(int num)
+        {
+
+  	    VendorTransaction vendor = new VendorTransaction();
+
+            vendor.GetVendorDetails();
+            vendor.PerformTransaction();
+	    Console.ReadLine();
+	}
+    }
+
+    class VendorTransaction
+    {
+        int hours;
+        double dollar_rate;
+        double charge;
+        int total_resrc;
+
+        double vendor_cost;
+
+        public void GetVendorDetails()
+        {
+            Console.WriteLine("Enter Dollar rate :");
+            dollar_rate = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Enter total hours:");
+            hours = Convert.ToInt32(Console.ReadLine());
+
+            charge = dollar_rate * hours;
+        }
+
+
+        public void PerformTransaction()
+        {
+            Console.WriteLine("If you have purchased hardware/infrastructure or software licenses? if yes press 1 or else 0");
+            int ch = Convert.ToInt32(Console.ReadLine());
+
+            if(ch == 1)
+            {
+                Console.WriteLine("Enter the hardware/infrastructure cost : ");
+                double hard_infra = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("Enter cost of software licenses : ");
+                double soft_lic = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("is the sofwtare used? if 1 type 0 ");
+                int ch1 = Convert.ToInt32(Console.ReadLine());
+
+                charge += 30 * hard_infra / 100;
+
+                if (ch1 == 1)
+                    charge += 50 * soft_lic / 100;
+                else
+                    charge += soft_lic;
+
+                vendor_cost = hard_infra + soft_lic;
+            }
+
+            Console.WriteLine("did you utilized outside consultants for the project ? if yes press 1 or else 0");
+            ch = Convert.ToInt32(Console.ReadLine());
+            if (ch == 1)
+            {
+                Console.WriteLine("enter hours utilized by outsider consultants ");
+                vendor_cost = vendor_cost +  Convert.ToDouble(Console.ReadLine());
+            }
+            if (charge > vendor_cost)
+            {
+                Console.WriteLine("Profit of " + (charge - vendor_cost));
+            }
+            else
+                Console.WriteLine("loss of  " + (vendor_cost - charge));
+        }
+    }
+}
+
+*******************************************************
+
+//  V(1). LOOPS
+
+ class Program
+ {
+    static void Main(string[] args)
+        {
+	    Console.WriteLine("Enter  number : ");
+            int num = Convert.ToInt32(Console.ReadLine());
+            Console.Write("\n Series 1 : ");
+            Program.Series1(num); 
+            
+            Console.Write("\n Series 2 : ");
+            Program.Series2(num);
+
+            Console.Write("\nSeries 3 : ");
+            Program.Series3(num);
+            
+            Console.Write("\n Series 4 : ");
+            Program.Series4(num);
+
+            Console.Write("\n Series 5 : ");
+            Program.Series5(num);
+
+            Console.ReadLine();
+ 	}
+
+
+	 static void Series1(int num)
+        {
+            int c = 2;     
+            for (int i = 0 ; i < num; i++)
+            {
+                Console.Write(c*c + " ");
+                c += 2;
+            }
+        } 
+        
+        static void Series2(int num)
+        {                 
+            for (int i = 1 ; i <= num; i++)
+                Console.Write(Math.Pow(i,i) + " ");
+        }
+
+	static void Series3(int num)
+        {
+            Console.Write("1, 4, 7, ");
+            int n1 = 1, n2 = 4, n3 = 7, l = 3;
+            for(int i = 3; i < num; i++)
+            {
+                int temp = n1 + n2 + n3;
+                Console.Write(temp + ", ");
+                n1 = n2;  n2 = n3;   n3 = temp;                
+            }
+        }
+
+        static void Series4(int num)
+        {           
+            for (int i = 1; i <= num+1; i++)
+            {
+                if (i % 4 == 0)
+                    continue;
+                Console.Write(i*i + " ");             
+            }
+        }
+
+        static void Series5(int num)
+        {
+            int n1 = 1, n2 = 5, n3 = 8, n4;
+            Console.Write(n1 + " " + n2 + " " + n3 + " ");
+            for (int i = 3; i < num; i++)
+            {
+                n4 = n1 + n2 + n3;
+
+                n1 = n2; n2 = n3; n3 = n4;
+                Console.Write(n4 + " ");
+            }
+        }
+}
+
+
+//  V(3). Sum all prime numbers which ranges from m to n and printing all prime numbers 
+
+ class Program
+    {
+        public static bool CheckPrime(int num)
+        {
+            if (num == 1)
+            {
+                return false;
+            }
+            for (int i = 2; i * i <= num; i++)
+            {
+                if (num % i == 0)
+                {
+		    return false;
+                }
+            }
+            return true;
+        }
+        static void Main(string[] args)
+        {
+
+            Console.WriteLine("Enter value for start point ");
+            int m = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter value for end point");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            int sum = 0;
+            for(int i = m; i <= n; i++ )
+            {
+                if (Program.CheckPrime(i))
+		{
+                    Console.Write(i + " ");
+                    sum += i;
+		}
+            }
+            Console.WriteLine("\nSum of prime numbers from " + m + " to " + n+ " = "+ sum);
+            Console.ReadLine();
+        }
+    }
+
+
+*******************************************************
+
+// 4. Accepting the Company details of the item and performing operations
+
+ class Program
+ {
+    static void Main(string[] args)
+        {
+	 double grandTotal = 0;
+            while (true)
+            {
+                int total = 0;
+                Console.WriteLine("Enter y or n to continue..");
+                char choice = Convert.ToChar(Console.ReadLine());
+                if (choice == 'y')
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Enter item code : ");
+                    int itemCode = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine("Enter item description ");
+                    string desc = Console.ReadLine();
+                    
+                    Console.WriteLine("Enter No. of quantity : ");
+                    int qty = Convert.ToInt32(Console.ReadLine());
+                    
+                    Console.WriteLine("Enter price of product : ");
+                    int price = Convert.ToInt32(Console.ReadLine());
+
+                    total += qty * price;
+                    grandTotal += total;
+                }
+                else
+                {
+                    Console.WriteLine("You chose No");
+                    break;
+                }
+
+                if (grandTotal > 10000)
+                {
+                    Console.WriteLine("You have got a 10% discount on that!");
+                    grandTotal -= (grandTotal * 10) / 100;
+                }
+                if (grandTotal < 1000)
+                {
+                    Console.WriteLine("Do you want to pay by Card? y or n");
+                    char ch = Convert.ToChar(Console.ReadLine());
+                    if (ch == 'y')
+                        grandTotal += (2.5 * grandTotal) / 100;
+                }
+
+            }
+                Console.WriteLine("Grand Total = " + grandTotal);
+
+                NumberToWord(Convert.ToString(grandTotal).ToCharArray());
+
+        }
+	 
+       static void NumberToWord(char[] num)
+        {
+            int len = num.Length;
+
+            if (len == 0)
+            {
+                Console.WriteLine("empty string");
+                return;
+            }
+            if (len > 4)
+            {
+                Console.WriteLine("Length more than 4 is not supported");
+                return;
+            }
+
+            string[] single_digits = new string[] {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+
+            string[] two_digits = new string[] {"","ten",  "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
+
+            string[] tens_multiple = new string[] { "",  "", "twenty", "thirty", "forty","fifty", "sixty", "seventy", "eighty", "ninety"
+        };
+            string[] tens_power = new string[] { "hundred", "thousand" };
+
+            Console.Write((new string(num)) + ": ");
+
+            if (len == 1)
+            {
+                Console.WriteLine(single_digits[num[0] - '0']);
+                return;
+            }
+
+            int x = 0;
+            while (x < num.Length)
+            {
+
+                if (len >= 3)
+                {
+                    if (num[x] - '0' != 0)
+                    {
+                        Console.Write(single_digits[num[x] - '0'] + " ");
+                        Console.Write(tens_power[len - 3] + " ");
+                    }
+                    --len;
+                }
+                else
+                {
+                    if (num[x] - '0' == 1)
+                    {
+                        int sum = num[x] - '0' + num[x + 1] - '0';
+                        Console.WriteLine(two_digits[sum]);
+                        return;
+                    }
+
+                    else if (num[x] - '0' == 2 && num[x + 1] - '0' == 0)
+                    {
+                        Console.WriteLine("twenty");
+                        return;
+                    }
+
+                    else
+                    {
+                        int i = (num[x] - '0');
+                        if (i > 0)
+                            Console.Write(tens_multiple[i] + " ");
+                        else
+                            Console.Write("");
+                        ++x;
+                        if (num[x] - '0' != 0)
+                            Console.WriteLine(single_digits[num[x] - '0']);
+                    }
+                }
+                ++x;
+            }
+        }
+
+}
+
+
+*******************************************************
+ // Level 3
+
+ class Program
+ {
+    static void Main(string[] args)
+        {
+	    Program.MultipleOf7();
+            Console.ReadLine();
+ 	}
+
+    static void MultipleOf7()
+        {
+            int c = 1;
+            int num = 7;
+            List<int> list = new List<int>();
+            while(c <= 25)
+            {
+                if((num % 2 == 1) && (num % 3 == 1) && (num % 4 == 1) && (num % 5 == 1) && (num % 6 == 1))
+                {
+                    Console.Write(num + " ");                   
+                    c++;
+
+                    if (num % 100 == 1)
+                        list.Add(num);
+                }             
+                num += 7;
+            }
+            Console.WriteLine("\nEnding with 01");
+            foreach (var item in list)
+            {
+                Console.Write( item + " ");
+            }
+        }
+}
+
+

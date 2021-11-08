@@ -1,0 +1,88 @@
+2. Report Card
+
+namespace PLT_problems
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            StudentDetails sd = new StudentDetails();
+            sd.GetStudentDetails();
+            sd.PrintDetails();
+            sd.SecuredDetails();
+
+            Console.ReadLine();
+        }
+    }
+
+    class StudentDetails
+    {
+        public string name;
+        public int sub1;
+        public int sub2;
+        public int sub3;
+        int avg = 0;
+        int total = 0;
+        public void GetStudentDetails()
+        {
+            Console.WriteLine("Enter name of student: ");
+            name = Console.ReadLine();
+            
+            Console.WriteLine("Enter 3 Subject marks ");
+            sub1 = Convert.ToInt32(Console.ReadLine());
+            sub2 = Convert.ToInt32(Console.ReadLine());
+            sub3 = Convert.ToInt32(Console.ReadLine());   
+        }
+
+	public bool isFail(int s1, int s2, int s3)
+        {
+            if (s1 < 35 && s2 < 35 && s3 < 35)
+                return true;
+
+            return false;
+        }
+
+        public void PrintDetails()
+        {
+            this.total = sub1 + sub2 + sub3;
+            this.avg = total / 3;
+
+            Console.WriteLine("Average is = " + this.avg);
+            Console.WriteLine("Total marks are = " + this.total);
+        }
+
+         public void SecuredDetails()
+        {
+            if (avg >= 60 && isFail(sub1,sub2,sub3))
+                Console.WriteLine("First Class");
+            else if (avg >= 50 && avg < 60 && isFail(sub1, sub2, sub3))
+                Console.WriteLine("Second class");
+            else if (avg >= 35 && avg < 50 && isFail(sub1, sub2, sub3))
+                Console.WriteLine("Pass class");
+            else
+                Console.WriteLine("Failed");
+        }
+    }
+}
+
+*********************************************
+
+3. Displaying Series
+
+class Program
+    {
+        static void Main(string[] args)
+        {
+                Console.WriteLine("Enter  n ");
+                int n = Convert.ToInt32(Console.ReadLine());
+                for (int i = 1; i <= n; i++)
+                {
+                    Console.Write(i*i - i + 1 + " ");
+                }
+                Console.WriteLine();
+                Console.ReadLine();
+      
+        }
+    }
+
+******************************************

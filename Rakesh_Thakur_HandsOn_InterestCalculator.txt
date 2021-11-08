@@ -1,0 +1,32 @@
+package HandON;
+
+public class HandsOn4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		InterestCalculator intCal = new InterestCalculator(1400.45, 6);
+		System.out.println(	"The Interest = " + intCal.getInterest());
+
+	}
+
+}
+
+class InterestCalculator{
+	double principle;
+	int time;
+	double intRate;
+	
+	public InterestCalculator(double principle, int time) {
+		this.principle = principle;
+		this.time = time;
+		
+		if(time >= 5)
+			this.intRate = 10;
+		else
+			this.intRate = 12;
+	}
+	
+	public double getInterest() {
+		return ((this.principle * this.intRate * this.time)/100);
+	}
+}

@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace RakeshThakurAssesment
+{
+    class Program
+    {
+        static bool isPrime(int num)
+        {
+            if (num == 1)
+                return false;
+            for (int i = 2; i * i <= num; i++)           
+                if (num % i == 0)
+                    return false;               
+            return true;
+        }
+        static void Main(string[] args)
+        {
+            int count = 1;
+            Console.WriteLine("The series is : ");
+            for (int i = 2; count < 10000; i++)
+            {
+                if (isPrime(i))
+                {
+                    Console.Write(count + " ");
+                    count += i;
+                }                             
+            }
+            Console.ReadLine();
+        }
+    }
+}
