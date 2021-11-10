@@ -30,9 +30,9 @@ namespace StudentResultWindowsFormsApp
         private void InitializeComponent()
         {
             this.txtname = new System.Windows.Forms.TextBox();
-            this.txtmark1 = new System.Windows.Forms.TextBox();
+            this.txtmarks1 = new System.Windows.Forms.TextBox();
+            this.txtmarks2 = new System.Windows.Forms.TextBox();
             this.txtmarks3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.txtresult = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,26 +49,26 @@ namespace StudentResultWindowsFormsApp
             this.txtname.Size = new System.Drawing.Size(218, 26);
             this.txtname.TabIndex = 0;
             // 
-            // txtmark1
+            // txtmarks1
             // 
-            this.txtmark1.Location = new System.Drawing.Point(336, 93);
-            this.txtmark1.Name = "txtmark1";
-            this.txtmark1.Size = new System.Drawing.Size(100, 26);
-            this.txtmark1.TabIndex = 1;
+            this.txtmarks1.Location = new System.Drawing.Point(336, 93);
+            this.txtmarks1.Name = "txtmarks1";
+            this.txtmarks1.Size = new System.Drawing.Size(100, 26);
+            this.txtmarks1.TabIndex = 1;
+            // 
+            // txtmarks2
+            // 
+            this.txtmarks2.Location = new System.Drawing.Point(336, 144);
+            this.txtmarks2.Name = "txtmarks2";
+            this.txtmarks2.Size = new System.Drawing.Size(100, 26);
+            this.txtmarks2.TabIndex = 2;
             // 
             // txtmarks3
             // 
-            this.txtmarks3.Location = new System.Drawing.Point(336, 144);
+            this.txtmarks3.Location = new System.Drawing.Point(336, 191);
             this.txtmarks3.Name = "txtmarks3";
             this.txtmarks3.Size = new System.Drawing.Size(100, 26);
-            this.txtmarks3.TabIndex = 2;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(336, 191);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 26);
-            this.textBox4.TabIndex = 3;
+            this.txtmarks3.TabIndex = 3;
             // 
             // button1
             // 
@@ -146,9 +146,9 @@ namespace StudentResultWindowsFormsApp
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtresult);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.txtmarks3);
-            this.Controls.Add(this.txtmark1);
+            this.Controls.Add(this.txtmarks2);
+            this.Controls.Add(this.txtmarks1);
             this.Controls.Add(this.txtname);
             this.Name = "StudentResultCalculator";
             this.Text = "Student Result Calculator ";
@@ -160,9 +160,9 @@ namespace StudentResultWindowsFormsApp
         #endregion
 
         private System.Windows.Forms.TextBox txtname;
-        private System.Windows.Forms.TextBox txtmark1;
+        private System.Windows.Forms.TextBox txtmarks1;
+        private System.Windows.Forms.TextBox txtmarks2;
         private System.Windows.Forms.TextBox txtmarks3;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtresult;
         private System.Windows.Forms.Label label1;

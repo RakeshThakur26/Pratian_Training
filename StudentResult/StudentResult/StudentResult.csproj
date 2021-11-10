@@ -50,9 +50,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\StudentResultCalculatorLibrary\StudentResultCalculatorLibrary.csproj">
-      <Project>{3546e4ba-14b1-4f66-8e23-98069046e393}</Project>
-      <Name>StudentResultCalculatorLibrary</Name>
+    <ProjectReference Include="..\StudentResultCalculatorClassLibrary\StudentResultCalculatorClassLibrary.csproj">
+      <Project>{370fcfb7-179e-49e7-8c87-02dbecc8665a}</Project>
+      <Name>StudentResultCalculatorClassLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

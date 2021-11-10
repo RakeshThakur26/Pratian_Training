@@ -18,16 +18,19 @@ namespace ExceptionHandlingDemo
             if (number.Length != 10)
                 throw new InvalidMobileNumberException("Number length should be 10..");
 
-            if (number[0] != '9')
+            else if (number[0] != '9')
                 throw new InvalidMobileNumberException("Mobile number should start with 9..");
-           
-            for (int i = 0; i < number.Length; i++)
+            else
             {
-                if(number[i] > '9' || number[i] <'0')
+                for (int i = 0; i < number.Length; i++)
                 {
-                    throw new InvalidMobileNumberException("Enter only digits");
+                    if (number[i] > '9' || number[i] < '0')
+                    {
+                        throw new InvalidMobileNumberException("Enter only digits");
+                    }
                 }
             }
+           
 
         }
     }

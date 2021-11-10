@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using StudentResultCalculatorLibrary;
+using StudentResultCalculatorClassLibrary;
+
 
 namespace StudentResult
 {
@@ -27,7 +28,7 @@ namespace StudentResult
                 Console.Write("\nEnter subject 3 marks : ");
                 s3 = Convert.ToInt32(Console.ReadLine());
 
-                result = StudentCalculatorClass.StudentCalculator(s1,s2,s3);
+                result = StudentResultCalculator.StudentCalculator(s1,s2,s3);
 
                 Console.WriteLine($"\nThe result of {name} for {s1}, {s2}, {s3} is {result}");
             }

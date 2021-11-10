@@ -27,9 +27,7 @@ namespace ExceptionHandlingDemo3
             catch (SpeedMorethanMaximumSpeedException ex)
             {
                 Console.WriteLine(ex.Message);
-            }
-
-           
+            }          
 
             Console.Read();
         }

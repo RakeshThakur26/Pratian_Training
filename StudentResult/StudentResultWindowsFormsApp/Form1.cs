@@ -22,15 +22,15 @@ namespace StudentResultWindowsFormsApp
         {
             try
             {
-                int s1 = int.Parse(txtmark1.Text);
-                int s2 = int.Parse(txtmarks3.Text);
-                int s3 = int.Parse(textBox4.Text);
+                int s1 = int.Parse(txtmarks1.Text);
+                int s2 = int.Parse(txtmarks2.Text);
+                int s3 = int.Parse(txtmarks3.Text);
 
                 string result = StudentCalculatorClass.StudentCalculator(s1, s2, s3);
 
                 txtresult.Text = $"The result of {txtname.Text} is {result}";
             }
-            catch (FormatException)
+            catch (FormatException ex)
             {
                 MessageBox.Show("Please enter only numeric data..");
             }
