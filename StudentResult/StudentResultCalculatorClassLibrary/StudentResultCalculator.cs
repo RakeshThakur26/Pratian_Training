@@ -8,6 +8,12 @@ namespace StudentResultCalculatorClassLibrary
 {
     public class StudentResultCalculator
     {
+        private readonly INotification notification;
+
+        public StudentResultCalculator(INotification notification)
+        {
+            this.notification = notification;
+        }
 
         /// <summary>
         /// 
@@ -17,7 +23,7 @@ namespace StudentResultCalculatorClassLibrary
         /// <param name="s3"></param>
         /// <returns></returns>
         /// <exception cref="InvalidMarksException"></exception>
-        public static string StudentCalculator(int s1, int s2, int s3)
+        public string StudentCalculator(int s1, int s2, int s3)
         {
             if (s1 > 100 || s1 < 0 || s2 > 100 || s2 < 0 || s3 > 100 || s3 < 0)
                 throw new InvalidMarksException("Marks should be between 0 and 100");
@@ -25,13 +31,17 @@ namespace StudentResultCalculatorClassLibrary
             string result;
             double avg = (s1 + s2 + s3) / 3;
             if (avg >= 65)
-                result = "First";
+                result = "First class";
             else if (avg >= 59)
-                result = "Second";
+                result = "Second class";
             else if (avg >= 35)
                 result = "Pass";
             else
                 result = "Fail";
+
+
+            // Mailing the result to the student
+           notification.Notify("Your result is " + result, "StudentEmailId@mail.com");
 
             return result;
         }

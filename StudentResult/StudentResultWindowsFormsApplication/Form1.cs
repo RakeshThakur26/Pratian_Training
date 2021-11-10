@@ -26,7 +26,9 @@ namespace StudentResultWindowsFormsApplication
                 int s2 = int.Parse(txtmarks2.Text);
                 int s3 = int.Parse(txtmarks3.Text);
 
-                string result = StudentResultCalculatorClassLibrary.StudentResultCalculator.StudentCalculator(s1, s2, s3);
+                StudentResultCalculator notification = new StudentResultCalculator(new EmailNotification()); 
+
+                string result = notification.StudentCalculator(s1, s2, s3);
 
                 txtresult.Text = $"The result of {txtname.Text} is {result}";
                 if (result.Equals("Fail"))

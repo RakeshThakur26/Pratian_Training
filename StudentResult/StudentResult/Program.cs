@@ -28,7 +28,8 @@ namespace StudentResult
                 Console.Write("\nEnter subject 3 marks : ");
                 s3 = Convert.ToInt32(Console.ReadLine());
 
-                result = StudentResultCalculator.StudentCalculator(s1,s2,s3);
+                StudentResultCalculator notif = new StudentResultCalculator(new EmailNotification());
+               result = notif.StudentCalculator(s1,s2,s3);
 
                 Console.WriteLine($"\nThe result of {name} for {s1}, {s2}, {s3} is {result}");
             }

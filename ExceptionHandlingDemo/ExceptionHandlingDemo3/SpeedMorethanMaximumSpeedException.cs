@@ -13,6 +13,7 @@ namespace ExceptionHandlingDemo3
         public SpeedMorethanMaximumSpeedException(string msg = null, Exception innerExpception = null) : base(msg, innerExpception)
         {
             errorMssg = msg;
+            
         }
 
 
