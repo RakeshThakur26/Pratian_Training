@@ -28,9 +28,10 @@ namespace ExceptionHandlingDemo3
         /// <exception cref="SpeedMorethanMaximumSpeedException"></exception>
         public void IncreaseSpeed()
         {
-            this.CurrentSpeed += 5;
-            if (this.CurrentSpeed > this.MaximumSpeed)
-                throw new SpeedMorethanMaximumSpeedException("Current Speed Exceeds Max Speed");
+            this.CurrentSpeed += 10;
+            
+            SpeedMorethanMaximumSpeedException.SpeedMorethanMaximumSpeedExceptionMethod(this.CurrentSpeed, this.MaximumSpeed);
+            Console.WriteLine("Current speed : " + this.CurrentSpeed);
         }
 
     }
