@@ -42,15 +42,9 @@ namespace FileHandlingDemo
                 {
                     line = sr.ReadLine();
                     string[] data = line.Split(',');
-                    if(Convert.ToInt32(data[0]) == id )
-                    {
-                        //line.Remove(0);
-                        //return;
-                    }
-                    else
-                    {
+                    if(!(Convert.ToInt32(data[0]) == id) )                   
                         str += line + "\n";
-                    }
+                   
                 }
             }
             finally
@@ -184,14 +178,14 @@ namespace FileHandlingDemo
 
         }
         
-        public static void WriteFile(string path, string msg)
+        public static void WriteFile(string path, string str)
         {
             // true is for appending data to preveous data
             StreamWriter sw = null;
             try
             {
                 sw = new StreamWriter(path);
-                sw.WriteLine(msg);                
+                sw.WriteLine(str);                
             }
             finally
             {
