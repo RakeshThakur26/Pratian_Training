@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,11 +31,13 @@ namespace Assignment5
             person4.Age = 10;
             person4.PlaceOfBirth = "Bangalore";
 
-            Dictionary<string, ClsPerson> people = new Dictionary<string, ClsPerson>();
-            people.Add(person1.Name, person1);
-            people.Add(person2.Name, person2);
-            people.Add(person3.Name, person3);
-            people.Add(person4.Name, person4);
+            Hashtable people = new Hashtable();
+
+           // Dictionary<string, ClsPerson> people = new Dictionary<string, ClsPerson>();
+            people.Add(person1.Name, person1.CanVote());
+            people.Add(person2.Name, person2.CanVote());
+            people.Add(person3.Name, person3.CanVote());
+            people.Add(person4.Name, person4.CanVote());
 
             ClsPerson person5 = new ClsPerson();
             person5.Name = "Jyothi";
@@ -43,19 +46,31 @@ namespace Assignment5
             ClsPerson person6 = new ClsPerson();          
             person6.Age = 10;
 
-            //people.Add(person5.Name, person5);
-            people.Add(person6.Name, person6);
+            //people.Add(person5.Name, person5.CanVote());
+            people.Add(person6.Name, person6.CanVote());
 
-            Console.WriteLine("Name\tAge\tEligible to Vote");
+            Console.WriteLine("Name\tEligible to Vote");
             Console.WriteLine("******************************************");
-            foreach (var item in people)
+
+            foreach (DictionaryEntry item in people)
             {
-                Console.Write(item.Key + "\t" + item.Value.Age + "\t");
-                if(item.Value.CanVote())
+                Console.Write(item.Key +  "\t");
+                if ((bool)item.Value)
                     Console.WriteLine("Yes");
                 else
                     Console.WriteLine("No");
+                Console.WriteLine();
             }
+
+            //foreach (var item in people)
+            //{
+            //    Console.Write(item.Key + "\t" + item.Value.Age + "\t");
+            //    if(item.Value.CanVote())
+            //        Console.WriteLine("Yes");
+            //    else
+            //        Console.WriteLine("No");
+            //}
+
 
             Console.Read();
         }

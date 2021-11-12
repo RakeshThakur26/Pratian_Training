@@ -17,6 +17,7 @@ namespace Assignment5
             this.Age = 0;
             this.Name = "abc";
             this.PlaceOfBirth = "abc";
+            
         }
 
         public bool CanVote()
@@ -25,5 +26,6 @@ namespace Assignment5
                 return true;
             return false;
         }
+
     }
 }
