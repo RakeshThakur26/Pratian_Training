@@ -10,8 +10,10 @@ namespace Assignment2
     {
         static void Main(string[] args)
         {
+            // Creating List of ClsPerson class objects
             List<ClsPerson> people = new List<ClsPerson>();
 
+            // Reading the Names from the console
             ClsPerson person1 = new ClsPerson();
             Console.WriteLine("Enter person 1 Name :");
             person1.Name = Console.ReadLine();
@@ -28,13 +30,14 @@ namespace Assignment2
             Console.WriteLine("Enter person 4 Name :");
             person4.Name = Console.ReadLine();
 
+            // adding the objects to list
             people.Add(person1);
             people.Add(person2);
             people.Add(person3);
             people.Add(person4);
 
+            // Displaying the names
             Console.WriteLine("\nList of names");
-
             foreach (var item in people)
                 Console.WriteLine(item.Name);
 

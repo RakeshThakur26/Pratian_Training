@@ -25,25 +25,30 @@ namespace Assignment1
                     acceptFlag = false;
                 else
                     acceptFlag = true;
-
             }
+
+            // Displaying total number of elements in the list
             Console.WriteLine("Total number of elements in the List : " + list.Count);
             int avg = Convert.ToInt32(list.Average());
            
-
+            // Inserting element into the middle of the list
             if (list.Count % 2 == 1)
                 list.Insert((list.Count/2)+1, avg);
             else
                 list.Insert((list.Count/2), avg);
 
+            // Displaying th list elements
             Console.Write("Elements are : ");
             foreach (var item in list)           
                 Console.Write(item + "  ");
 
+            // Removing element present at 2nd position
             list.RemoveAt(1);
 
+            // Removing Average value inserted element
             list.Remove(avg);
 
+            // Displaying th list elements
             Console.Write("\nElements After Removing : ");
             foreach (var item in list)
                 Console.Write(item + "  ");
