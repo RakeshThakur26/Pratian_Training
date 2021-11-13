@@ -13,25 +13,28 @@ namespace SearchEngine
         static void Main(string[] args)
         {
             DriveInfo[] drives = Level1.GetDrives();
-
-            Console.WriteLine("*************************************");
-            Console.WriteLine("Level 1");
-            Console.WriteLine("*************************************");
-
-            Level1.PrintAllDrives(drives);        
+                        
+            Level1.PrintAllDrives(drives);
+            Console.WriteLine();
 
             Console.WriteLine("Enter file name to be searched : ");
-            string searchFile = Console.ReadLine();    
-          
+            string searchFile = Console.ReadLine();
 
-            Thread level2 = new Thread(() => Level2.SearchFile(searchFile, drives));
-            level2.Start();
-           // Level2.SearchFile(searchFile, drives);
-            
+            if (!Level4.SeachHistory(searchFile))
+            {
+                Console.WriteLine("Enter new file name to be searched : ");
+                searchFile = Console.ReadLine();
+                Thread level2 = new Thread(() => Level2.SearchFile(searchFile, drives));
+                level2.Start();
+                // Level2.SearchFile(searchFile, drives);
+                Console.WriteLine();
 
-            Thread level3 = new Thread(() => Level3.SearchByParallel(searchFile, drives));
-            level3.Start();
-            //Level3.SearchByParallel(searchFile, drives);
+                Thread level3 = new Thread(() => Level3.SearchByParallel(searchFile, drives));
+                level3.Start();
+                //Level3.SearchByParallel(searchFile, drives);
+                Console.WriteLine();
+            }
+
 
             Console.Read();
         }      

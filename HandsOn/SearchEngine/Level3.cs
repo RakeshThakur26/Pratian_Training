@@ -36,11 +36,6 @@ namespace SearchEngine
 
         public static bool Loop(string path, string fname)
         {
-            //if (path.Contains("Recycle") || path.Contains("$") || path.Contains("Recovery") || path.Contains("Documents and Settings") || path.Contains("Program Files") || path.Contains("ProgramData"))
-            //{
-            //    return false;
-            //}
-            // Console.WriteLine(path);
             if (check(path, fname))
                 return true;
             try
@@ -80,7 +75,8 @@ namespace SearchEngine
                 Console.WriteLine("Level 3");
                 Console.WriteLine("File found at " + path);
                 Console.WriteLine("*************************************");
-             
+
+                Level4.StoreIntoFile(path, filename);
                 found = 1;
                 return true;
             }

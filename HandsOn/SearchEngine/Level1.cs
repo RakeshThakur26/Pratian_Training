@@ -13,17 +13,13 @@ namespace SearchEngine
         {
             return (DriveInfo.GetDrives());
         }
-
-        public static string GetFileName()
-        {
-
-            Console.WriteLine("Enter file name to be searched : ");
-            string searchFile = Console.ReadLine();
-            return searchFile;
-        }
-
+       
         public static void PrintAllDrives(DriveInfo[] drives)
         {
+            Console.WriteLine("*************************************");
+            Console.WriteLine("Level 1");
+           
+
             Console.WriteLine("Drives in the system are : ");
             foreach (var item in drives)
             {
@@ -33,8 +29,9 @@ namespace SearchEngine
                 else
                     active = "Inactive";
                 Console.WriteLine("Drive " + item + " is " + active);
-
             }
+            Console.WriteLine("*************************************");
+
         }
     }
 }

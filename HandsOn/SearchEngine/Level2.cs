@@ -12,7 +12,7 @@ namespace SearchEngine
         public static int found = 0;
         public static void SearchFile(string fname, DriveInfo[] drives)
         {
-            foreach (var drive in drives)
+            Parallel.ForEach(drives, drive =>
             {
                 if (check(drive.Name, fname))
                     return;
@@ -21,7 +21,8 @@ namespace SearchEngine
                     if (Loop(drive.Name, fname))
                         return;
                 }
-            }
+            });
+
             try
             {
                 if (found == 0)
@@ -36,11 +37,7 @@ namespace SearchEngine
 
         public static bool Loop(string path, string fname)
         {
-            //if (path.Contains("Recycle") || path.Contains("$") || path.Contains("Recovery") || path.Contains("Documents and Settings") || path.Contains("Program Files") || path.Contains("ProgramData"))
-            //{
-            //    return false;
-            //}
-            // Console.WriteLine(path);
+           
             try
             {
                 if (check(path, fname))
