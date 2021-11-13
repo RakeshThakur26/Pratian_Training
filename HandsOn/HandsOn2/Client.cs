@@ -9,7 +9,6 @@ namespace HandsOn2
     delegate void NotifyMeDelegate(string sInfo);
     class Client
     {
-
         public static void InvokeDelegate(NotifyMeDelegate d)
         {
             d("You are late paying your bills!");

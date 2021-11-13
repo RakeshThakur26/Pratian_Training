@@ -13,16 +13,16 @@ namespace DelegatesDemo2
             Account a = new Account();
             
             a.Deposit(100);
-
-            Console.WriteLine(a.Balance);
+            
+            Console.WriteLine("Balance = " + a.Balance);
             a.Withdraw(10);
-            Console.WriteLine(a.Balance);
+            Console.WriteLine("Balance = " + a.Balance);
 
             Console.Read();
         }
     }
 
-    public delegate void  AlertDelegate();
+    public delegate void AlertDelegate(string str);
 
     class Account
     {
@@ -36,28 +36,30 @@ namespace DelegatesDemo2
         public void Deposit(int amount)
         {
             this.Balance += amount;
-            Alert a = new Alert();
-            a.SendMail();
+            Console.WriteLine("Do you wan to Subscribe for notification? if yes");
+            this.alert = new AlertDelegate(al.SendMail);
+            this.alert += al.SendSMS;
+            
+            this.alert(amount + " Deposited in your account");
         }
         
         public void Withdraw(int amount)
         {
             this.Balance -= amount;
-            Alert a = new Alert();
-            a.SendSMS();
+            alert(amount + " Withdrawn from your account");
         }
     }
 
     class Alert
     {
-        public void SendMail()
+        public void SendMail(string msg)
         {
-            Console.WriteLine("Mail sent");
+            Console.WriteLine("Mail : " + msg);
         }
 
-        public void SendSMS()
+        public void SendSMS(string msg)
         {
-            Console.WriteLine("SMS sent");
+            Console.WriteLine("SMS : " + msg);
         }
 
     }
