@@ -51,8 +51,6 @@ namespace DBDemo1.DataAccess
             {
                 conn.Close();
             }
-
-
         }
 
         public void DeleteContact(int contactId)
@@ -61,10 +59,11 @@ namespace DBDemo1.DataAccess
             try
             {
                 conn.Open();
-                string query = $"delete from Contacts where ContactID = @id";
+                string query = "sp_deleteContactById";
+              
                 SqlCommand sql = new SqlCommand(query, conn);
                 sql.Parameters.AddWithValue("@id",contactId);
-               
+                sql.CommandType = System.Data.CommandType.StoredProcedure;
                 sql.ExecuteNonQuery();
             }
             finally
@@ -100,9 +99,11 @@ namespace DBDemo1.DataAccess
             try
             {
                 conn.Open();
-                string query = $"select * from Contacts where ContactID = @id";
+                string query = "sp_getContactById";
                 SqlCommand sql = new SqlCommand(query, conn);
+                sql.CommandType = System.Data.CommandType.StoredProcedure;
                 sql.Parameters.AddWithValue("@id", contactId);
+                
                 SqlDataReader reader = sql.ExecuteReader();
                 reader.Read();
                 contact = new Contact();
@@ -132,9 +133,11 @@ namespace DBDemo1.DataAccess
             try
             {
                 conn.Open();
-                string query = $"select * from Contacts where Location=@l";
+                string query = "sp_getContactsByLocation @l";
                 SqlCommand sql = new SqlCommand(query, conn);
                 sql.Parameters.AddWithValue("@l", location);
+                sql.CommandType = System.Data.CommandType.StoredProcedure;
+
                 SqlDataReader reader = sql.ExecuteReader();
 
                 if (reader.HasRows)
@@ -173,7 +176,7 @@ namespace DBDemo1.DataAccess
             try
             {
                 conn.Open();
-                string query = $"select * from Contacts";
+                string query = "sp_getContacts";
                 SqlCommand sql = new SqlCommand(query, conn);
                 SqlDataReader reader = sql.ExecuteReader();
 

@@ -81,6 +81,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ADODotNet", "ADODotNet", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBDemo1", "DBDemo1\DBDemo1.csproj", "{FE8CE399-7F21-4D39-9FFF-95283BA73042}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HandsOnStoredProcedure", "HandsOnStoredProcedure", "{2E343CC7-053E-47B1-AEC0-0AC24A64BE3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoredProcedureHandsOn", "StoredProcedureHandsOn\StoredProcedureHandsOn.csproj", "{F56CE77E-67C9-424F-B102-7C9DC34ADBED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -199,6 +203,10 @@ Global
 		{FE8CE399-7F21-4D39-9FFF-95283BA73042}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE8CE399-7F21-4D39-9FFF-95283BA73042}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE8CE399-7F21-4D39-9FFF-95283BA73042}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F56CE77E-67C9-424F-B102-7C9DC34ADBED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F56CE77E-67C9-424F-B102-7C9DC34ADBED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F56CE77E-67C9-424F-B102-7C9DC34ADBED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F56CE77E-67C9-424F-B102-7C9DC34ADBED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -232,6 +240,7 @@ Global
 		{F4983168-D022-47E7-9197-9F38F64D6ECC} = {F27A905A-E187-4CC5-B573-982CAED92CAE}
 		{01D147A6-3EF0-4E95-964B-4D557C5A73E2} = {9AB706A7-3487-4E15-964C-D9DA5E473F7A}
 		{FE8CE399-7F21-4D39-9FFF-95283BA73042} = {98814696-A291-4F59-B2D3-09086E6F1CFD}
+		{F56CE77E-67C9-424F-B102-7C9DC34ADBED} = {2E343CC7-053E-47B1-AEC0-0AC24A64BE3A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {10388623-8329-435F-A22E-A1952285189A}
