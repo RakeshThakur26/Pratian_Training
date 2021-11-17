@@ -31,8 +31,7 @@ namespace SearchEngine
                     {
                         Console.WriteLine("File found at " + history[0]);
                         return true;
-                    }
-                        
+                    }                      
 
                 }
             }

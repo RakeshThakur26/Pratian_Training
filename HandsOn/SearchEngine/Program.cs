@@ -22,8 +22,7 @@ namespace SearchEngine
 
             if (!Level4.SeachHistory(searchFile))
             {
-                Console.WriteLine("Enter new file name to be searched : ");
-                searchFile = Console.ReadLine();
+                Console.WriteLine("File is not found in search history..\nSearching in System drives");
                 Thread level2 = new Thread(() => Level2.SearchFile(searchFile, drives));
                 level2.Start();
                 // Level2.SearchFile(searchFile, drives);
