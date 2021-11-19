@@ -16,6 +16,10 @@ namespace StoredProcedureHandsOn.DataAccess
         void DeleteTheatre(int id);
         void UpdateTheatre(int id, string name);
         void InsertTheatre(Theatre theatre);
+        void DeleteScreen(int id);
+        void InsertScreen(Screen screen);
+        void UpdateScreen(int id, string name);
+
 
 
     }
@@ -28,6 +32,8 @@ namespace StoredProcedureHandsOn.DataAccess
             SqlConnection conn = new SqlConnection(con);
             return conn;
         }
+
+        #region MovieOperation
 
         public void InsertMovie(Movie movie)
         {
@@ -84,6 +90,10 @@ namespace StoredProcedureHandsOn.DataAccess
             }
         }
 
+        #endregion
+
+        #region TheatreOperation
+
 
         public void InsertTheatre(Theatre theatre)
         {
@@ -91,10 +101,12 @@ namespace StoredProcedureHandsOn.DataAccess
             try
             {
                 conn.Open();
+                
                 string query = "sp_InsertTheatre";
                 SqlCommand sql = new SqlCommand(query, conn);
                 sql.Parameters.AddWithValue("@i", theatre.TheatreId);
                 sql.Parameters.AddWithValue("@n", theatre.TheatreName);
+              
                 sql.CommandType = System.Data.CommandType.StoredProcedure;
                 sql.ExecuteNonQuery();
             }
@@ -129,6 +141,67 @@ namespace StoredProcedureHandsOn.DataAccess
             {
                 conn.Open();
                 string query = "sp_UpdateTheatreNameByID";
+                SqlCommand sql = new SqlCommand(query, conn);
+                sql.Parameters.AddWithValue("@i", id);
+                sql.Parameters.AddWithValue("@n", name);
+
+                sql.CommandType = System.Data.CommandType.StoredProcedure;
+                sql.ExecuteNonQuery();
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        #endregion
+
+
+
+        public void InsertScreen(Screen screen)
+        {
+            SqlConnection conn = Connect();
+            try
+            {
+                conn.Open();
+                string query = "sp_InsertScreen";
+                SqlCommand sql = new SqlCommand(query, conn);
+                sql.Parameters.AddWithValue("@i", screen.ScreenId);
+                sql.Parameters.AddWithValue("@n", screen.ScreenName);
+                sql.Parameters.AddWithValue("@ti", screen.theatre.TheatreId);
+                sql.CommandType = System.Data.CommandType.StoredProcedure;
+                sql.ExecuteNonQuery();
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public void DeleteScreen(int id)
+        {
+            SqlConnection conn = Connect();
+            try
+            {
+                conn.Open();
+                string query = "sp_deleteScreenById";
+                SqlCommand sql = new SqlCommand(query, conn);
+                sql.Parameters.AddWithValue("@i", id);
+                sql.CommandType = System.Data.CommandType.StoredProcedure;
+                sql.ExecuteNonQuery();
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        public void UpdateScreen(int id, string name)
+        {
+            SqlConnection conn = Connect();
+            try
+            {
+                conn.Open();
+                string query = "sp_UpdateScreenNameByID";
                 SqlCommand sql = new SqlCommand(query, conn);
                 sql.Parameters.AddWithValue("@i", id);
                 sql.Parameters.AddWithValue("@n", name);

@@ -30,4 +30,8 @@ Create table Ticket (TicketId bigint primary key, BookingId bigint references Bo
 
 Create table Seat (RowId char not null, SeatId int not null, TicketId bigint references Ticket(TicketID), ScreenId int references Screen(ScreenId));
 
+ 
+ 
+
+	
 

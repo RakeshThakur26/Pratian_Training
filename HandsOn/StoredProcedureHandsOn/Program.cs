@@ -38,10 +38,20 @@ namespace StoredProcedureHandsOn
 
             // ticket.UpdateTheatre(1111, "4K");
 
-           // ticket.DeleteTheatre(1111);
+            // ticket.DeleteTheatre(1111);
+
+            //Screen screen1 = new Screen();
+            //screen1.ScreenId = 777;
+            //screen1.ScreenName = "Big screen";
+            //screen1.theatre.TheatreId = 1111;
+
+            //ticket.InsertScreen(screen1);
+
+            // ticket.UpdateScreen(777, "Wide screen");
+
+            // ticket.DeleteScreen(888);
 
 
-            
 
             Console.Read();
         }
