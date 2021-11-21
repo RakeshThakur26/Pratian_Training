@@ -36,6 +36,8 @@ namespace LinqDemo2
 			
 			//3. Extract/Show Product Name and Catagory Name only
             Console.WriteLine("Product Name and Catagory Name only");
+			var result3 = from p in products
+						  select new { prod = p.Name, cat = p.Catagory.Name };
 			foreach (var item in products)
 			{
 				Console.WriteLine(item.Name + "\t" + item.Catagory.Name);
@@ -47,14 +49,14 @@ namespace LinqDemo2
 			//4. Show the costliest product name
 			
             Console.WriteLine("Costliest product");
-			var result4 = products.OrderByDescending(obj => obj.Price).FirstOrDefault();
+			var result4 = products.OrderByDescending(obj => obj.Price).First();
 			Console.WriteLine(result4.Name + "\t" + result4.Price);
 			Console.WriteLine("***********************************\n");
 
 
 
 			//5. Show the cheepest product name and its price
-			var result5 = products.OrderBy(obj => obj.Price).FirstOrDefault();
+			var result5 = products.OrderBy(obj => obj.Price).First();
             Console.WriteLine("cheepest product name and its price");
 			Console.WriteLine(result5.Name + "\t" + result5.Price);
 			
