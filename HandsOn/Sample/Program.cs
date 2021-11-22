@@ -9,71 +9,46 @@ namespace Sample
 {
     class Program
     {
-        static bool GetInfo(DirectoryInfo dinfo, string filename)
+        public interface IBase
         {
-            FileInfo[] files = null;
-            DirectoryInfo[] directories = null;
-            try
-            {
-                files = dinfo.GetFiles();
-            }
-            catch (Exception e)
-            {
-                //Console.WriteLine(e.Message);
-            }
-            if (files != null)
-            {
-                foreach (var item in files)
-                {
-                    if (item.Name == filename) { Console.WriteLine(item.DirectoryName + "Found"); return true; }
-                    //Console.WriteLine(item);
+            void A();
+        }
 
-                }
-            }
-            try
+        public class Derived1 : IBase
+        {
+            public void A()
             {
-                directories = dinfo.GetDirectories();
+                throw new NotImplementedException();
             }
-            catch (Exception e)
+
+            public void B1()
             {
-                //Console.WriteLine(e.Message);
+                Console.WriteLine("B1");
             }
-            if (directories != null)
+        }
+
+        public class Derived2 : IBase 
+        {
+            public void A()
             {
-                foreach (var item in directories)
-                {
-                    //Console.WriteLine("-----------------");
-                    //Console.WriteLine(item);
-                    if (GetInfo(item, filename))
-                    {
-                        //Console.WriteLine(item.Name + " Found ");
-                        return true;
-                    }
-                }
+                throw new NotImplementedException();
             }
-            return false;
+
+            public void B2()
+            {
+                Console.WriteLine("B2");
+            }
         }
 
         static void Main(string[] args)
         {
-            DriveInfo[] drives = DriveInfo.GetDrives();
-            foreach (var item in drives)
-            {
-                Console.WriteLine(item.Name);
-                Console.WriteLine(item.IsReady);
-            }
 
-            Console.WriteLine("Enter the file to be searched:");
-            string filename = Console.ReadLine();
+            IBase d1 = new Derived1();
 
-            foreach (var item in drives)
-            {
-                DirectoryInfo directoryInfo = item.RootDirectory;
-                //new DirectoryInfo(@"C:\Users\K Sneha Lalitha\Desktop\Pratian Training")
-                GetInfo(directoryInfo, filename);
-            }
+            IBase d2 = new Derived1();
+            
+            
             Console.ReadLine();
-
         }
     }
 }
