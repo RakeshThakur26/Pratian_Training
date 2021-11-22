@@ -45,7 +45,10 @@
   <ItemGroup>
     <Compile Include="Account.cs" />
     <Compile Include="AccountAlreadyClosedException.cs" />
+    <Compile Include="DayLimitExceedsException.cs" />
     <Compile Include="InvalidPinException.cs" />
+    <Compile Include="TransferFunds.cs" />
+    <Compile Include="TransferMode.cs" />
     <Compile Include="ValidateClass.cs" />
     <Compile Include="CurrentAccount.cs" />
     <Compile Include="AgeInvalidException.cs" />

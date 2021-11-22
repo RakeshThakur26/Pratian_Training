@@ -20,7 +20,10 @@ namespace BankCaseStudyApp
         public double Balance { get; set; }
         public Privilage Privilage { get; set; }
 
+        //public Dictionary<DateTime, double> dayLimit { get; set; } = new Dictionary<DateTime, double>();
+
         public event NotifyDelegate notify = null;
+
 
         public void SetName(string name)
         {
@@ -45,7 +48,7 @@ namespace BankCaseStudyApp
 
             this.Balance += amt;
             this.notify = new NotifyDelegate(Notification.Notify);
-            this.notify($"{amt} is deposited");
+            this.notify($"{amt} is deposited to {this.AccNo}");
 
             return true;
         }
@@ -61,7 +64,7 @@ namespace BankCaseStudyApp
 
             this.Balance -= amt;
 
-            this.notify($"{amt} is withdrawn");
+            this.notify($"{amt} is withdrawn from {this.AccNo}");
             return true;
         }
 
