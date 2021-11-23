@@ -16,6 +16,7 @@ namespace EFProductManagement.DataAccess
         }
         public DbSet<Product> products { get; set; } 
         public DbSet<Catagory> Catagories { get; set; }
+        public DbSet<Suppliers> Suppliers { get; set; }
 
     }
 }

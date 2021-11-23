@@ -13,6 +13,7 @@ namespace EFProductManagement.DataAccess
         public bool DeleteProductById(int id)
         {
             var del = db.products.Find(id);
+            //var del = db.products.Where(p => p.ProductId == id).FirstOrDefault();
             db.products.Remove(del);
             db.SaveChanges();
             return true;
@@ -35,6 +36,11 @@ namespace EFProductManagement.DataAccess
             return expensiveProduct;
         }
 
+        public List<Catagory> GetProdByCatagoryName(string cat)
+        {
+            return db.Catagories.Where(c => c.Name==cat).ToList();
+        }
+
         public Product GetProduct(int id)
         {
             var result = db.products.Where(p => p.ProductId == id).FirstOrDefault();
@@ -49,7 +55,7 @@ namespace EFProductManagement.DataAccess
 
         public List<Product> GetProducts()
         {
-            var allProducts = (from pr in db.products
+            var allProducts = (from pr in db.products.Include("catagory")
                               select pr).ToList();
             return allProducts;
         }

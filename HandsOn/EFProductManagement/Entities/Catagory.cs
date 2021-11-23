@@ -13,5 +13,6 @@ namespace EFProductManagement.Entities
         public int CatagoryId { get; set; }
         [Required][StringLength(40)] 
         public string Name { get; set; }
+        public virtual List<Product> Products { get; set; } = new List<Product>();
     }
 }

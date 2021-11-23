@@ -18,9 +18,10 @@ namespace EFProductManagement
                 Console.WriteLine("*************************************");
                 Console.WriteLine("CRUD Operation on Product database");
                 Console.WriteLine("*************************************");
-                Console.WriteLine("1. Save Product\n2. Update Product price\n3. Delete product by id\n4. Display all products");
+                Console.WriteLine("1. Save Product\n2. Update Product \n3. Delete product by id\n4. Display all products");
                 Console.WriteLine("5. Get product details by id\n6. Get product details by name\n7. Get expensive product");
                 Console.WriteLine("8. Get cheapest product\n9. Display products between range\n10. Add catagory");
+                Console.WriteLine("11. Get Products by Catagory");
                 Console.WriteLine("-------------------------------------");
                 Console.Write("Please enter your choice : ");
                 ch = Convert.ToInt32(Console.ReadLine());
@@ -43,6 +44,10 @@ namespace EFProductManagement
 
                         Console.Write("Enter Product brand : ");
                         product.Brand = Console.ReadLine();
+
+                        Console.Write("Enter catagory name : ");
+                        string cat = Console.ReadLine();
+                        product.catagory = repo.GetCatagoryByName(cat);
 
                         repo.SaveProduct(product);
 
@@ -88,9 +93,9 @@ namespace EFProductManagement
                     case 4: var result = repo.GetProducts();
 
                         Console.WriteLine("-------------------------------------");
-                        Console.WriteLine("Id"+"    "+"Name" +"   "  + "Price" + "    " + " Description" + "    " +" Brand" + "    " +" Catagory");
+                        Console.WriteLine("Id\t Name\tPrice\t Description\tBrand\tCatagory");
                         foreach (var prod in result)
-                            Console.WriteLine(prod.ProductId +" \t"+prod.Name+" \t"+prod.Price +"\t"+prod.Description +" \t"+prod.Brand +" \t" + prod.catagory.Name);
+                            Console.WriteLine(prod.ProductId +"\t"+prod.Name+" \t"+prod.Price +"\t"+prod.Description +" \t"+prod.Brand +" \t" + prod.catagory.Name);
 
                         Console.WriteLine("-------------------------------------\n");
                         break;
@@ -134,8 +139,8 @@ namespace EFProductManagement
                         p = repo.GetCheapestProduct();
 
                         Console.WriteLine("-------------------------------------");
-                        Console.WriteLine("Id \t Name\tPrice");
-                        Console.WriteLine(p.ProductId + " \t" + p.Name + " \t" + p.Price);
+                        Console.WriteLine("Id \t Name\t Price");
+                        Console.WriteLine(p.ProductId + " \t" + p.Name + "\t" + p.Price);
                         Console.WriteLine("-------------------------------------\n");
                         break;
 
@@ -148,7 +153,7 @@ namespace EFProductManagement
                         result = repo.GetProductsByPrice(start, end);
 
                         Console.WriteLine(" -------------------------------------");
-                        Console.WriteLine("Id \t Name\tPrice");
+                        Console.WriteLine("Id \t Name\t Price");
                         foreach (var item in result)
                             Console.WriteLine(item.ProductId + " \t" + item.Name + " \t" + item.Price);
                         Console.WriteLine("-------------------------------------\n");
@@ -159,6 +164,23 @@ namespace EFProductManagement
                         catagory.Name = Console.ReadLine();
 
                         repo.SaveCatagory(catagory);
+                        Console.WriteLine("-------------------------------------\n");
+                        break;
+                        
+                    case 11:
+                        Console.Write("Enter Catagory name : ");
+                        cat = Console.ReadLine();
+
+                        var cats = repo.GetProdByCatagoryName(cat);
+                        Console.WriteLine("-------------------------------------\n");
+                        foreach (var c in cats)
+                        {
+                            Console.WriteLine(c.Name);
+                            foreach (var item in c.Products)
+                            {
+                                Console.WriteLine("\t" + item.Name);
+                            }
+                        }
                         Console.WriteLine("-------------------------------------\n");
                         break;
 

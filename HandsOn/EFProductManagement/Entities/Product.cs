@@ -20,6 +20,7 @@ namespace EFProductManagement.Entities
         [Column(TypeName ="ntext")]
         public string Description { get; set; }
         public string Brand { get; set; }
-        public Catagory catagory { get; set; } = new Catagory();
+        public Catagory catagory { get; set; } 
+        public virtual List<Suppliers> Suppliers { get; set; }
     }
 }

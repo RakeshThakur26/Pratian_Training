@@ -20,7 +20,8 @@ namespace EFProductManagement.DataAccess
         bool DeleteProductById(int id);//
 
         bool SaveCatagory(Catagory catagory);
-
         Catagory GetCatagoryByName(string name);
+
+        List<Catagory> GetProdByCatagoryName(string cat);
     }
 }

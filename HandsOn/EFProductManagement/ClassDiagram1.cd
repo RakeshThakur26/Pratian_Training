@@ -2,6 +2,15 @@
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="EFProductManagement.Entities.Product">
     <Position X="0.5" Y="0.5" Width="1.5" />
+    <AssociationLine Name="Suppliers" Type="EFProductManagement.Entities.Suppliers" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2" Y="2.115" />
+        <Point X="2.375" Y="2.115" />
+        <Point X="2.375" Y="4.94" />
+        <Point X="5.125" Y="4.94" />
+        <Point X="5.125" Y="4.565" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>EAAAAAAAAQAgAIAAAAAAAAQAAAAAAAAAAAAAAAABAAA=</HashCode>
       <FileName>Entities\Product.cs</FileName>
@@ -9,12 +18,25 @@
     <ShowAsAssociation>
       <Property Name="catagory" />
     </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Suppliers" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="EFProductManagement.Entities.Catagory">
     <Position X="3.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAQ=</HashCode>
       <FileName>Entities\Catagory.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Products" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="EFProductManagement.Entities.Suppliers">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAQAAAAAAACCAAAAAAAgAAQ=</HashCode>
+      <FileName>Entities\Suppliers.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

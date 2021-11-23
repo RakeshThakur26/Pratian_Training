@@ -58,6 +58,7 @@
     <Compile Include="DataAccess\ProductsRepository.cs" />
     <Compile Include="Entities\Catagory.cs" />
     <Compile Include="Entities\Product.cs" />
+    <Compile Include="Entities\Suppliers.cs" />
     <Compile Include="Migrations\202111221014146_InitialCreate.cs" />
     <Compile Include="Migrations\202111221014146_InitialCreate.designer.cs">
       <DependentUpon>202111221014146_InitialCreate.cs</DependentUpon>
