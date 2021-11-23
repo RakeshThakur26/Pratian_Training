@@ -8,13 +8,14 @@ using System.Threading.Tasks;
 
 namespace EFProductManagement.DataAccess
 {
-    public class ProductsDBContext : DbContext
+    internal class ProductsDBContext : DbContext
     {
         public ProductsDBContext() : base("name=ProductsDBContext")
         {
 
         }
         public DbSet<Product> products { get; set; } 
+        public DbSet<Catagory> Catagories { get; set; }
 
     }
 }

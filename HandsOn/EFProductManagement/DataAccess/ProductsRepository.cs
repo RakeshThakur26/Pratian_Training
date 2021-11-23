@@ -18,6 +18,11 @@ namespace EFProductManagement.DataAccess
             return true;
         }
 
+        public Catagory GetCatagoryByName(string name)
+        {
+            return db.Catagories.Where(c => c.Name.Equals(name)).FirstOrDefault();
+        }
+
         public Product GetCheapestProduct()
         {
             var cheapestProduct = db.products.OrderBy(p => p.Price).FirstOrDefault();
@@ -55,6 +60,13 @@ namespace EFProductManagement.DataAccess
             return result;
         }
 
+        public bool SaveCatagory(Catagory catagory)
+        {
+            db.Catagories.Add(catagory);
+            db.SaveChanges();
+            return true;
+        }
+
         public bool SaveProduct(Product product)
         {
             db.products.Add(product);
@@ -62,12 +74,15 @@ namespace EFProductManagement.DataAccess
             return true;
         }
 
-        public bool UpdateProduct(int id, int price)
+        public bool UpdateProduct(Product product)
         {
-            var result = db.products.Where(p => p.ProductId == id).FirstOrDefault();
-            result.Price = price;
-            db.SaveChanges();
-            return true;
+            //var result = db.products.Where(p => p.ProductId == id).FirstOrDefault();
+            //result.Price = price;
+            //db.SaveChanges();
+
+            db.Entry(product).State = System.Data.Entity.EntityState.Modified;
+
+            return db.SaveChanges()>=1;
         }
     }
 }

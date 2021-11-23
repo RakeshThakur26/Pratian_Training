@@ -15,8 +15,12 @@ namespace EFProductManagement.DataAccess
         Product GetCheapestProduct();//
         Product GetProductByName(string name);//
         List<Product> GetProductsByPrice(int startPrice, int endPrice);
-        bool UpdateProduct(int id, int price);//
+        bool UpdateProduct(Product product);//
         bool SaveProduct(Product product); //
         bool DeleteProductById(int id);//
+
+        bool SaveCatagory(Catagory catagory);
+
+        Catagory GetCatagoryByName(string name);
     }
 }

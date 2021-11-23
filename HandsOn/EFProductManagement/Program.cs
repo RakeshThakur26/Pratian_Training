@@ -12,7 +12,6 @@ namespace EFProductManagement
     {
         static void Main(string[] args)
         {
-
             int ch, id;
             while (true)
             {
@@ -21,13 +20,14 @@ namespace EFProductManagement
                 Console.WriteLine("*************************************");
                 Console.WriteLine("1. Save Product\n2. Update Product price\n3. Delete product by id\n4. Display all products");
                 Console.WriteLine("5. Get product details by id\n6. Get product details by name\n7. Get expensive product");
-                Console.WriteLine("8. Get cheapest product\n9. Display products between range");
+                Console.WriteLine("8. Get cheapest product\n9. Display products between range\n10. Add catagory");
                 Console.WriteLine("-------------------------------------");
                 Console.Write("Please enter your choice : ");
                 ch = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("-------------------------------------");
 
                 Product product = new Product();
+                Catagory catagory = new Catagory();
                 IProductsRepository repo = new ProductsRepository();
                 switch (ch)
                 {
@@ -38,6 +38,12 @@ namespace EFProductManagement
                         Console.Write("Enter price : ");
                         product.Price = Convert.ToInt32(Console.ReadLine());
 
+                        Console.Write("Enter Product Description : ");
+                        product.Description = Console.ReadLine();
+
+                        Console.Write("Enter Product brand : ");
+                        product.Brand = Console.ReadLine();
+
                         repo.SaveProduct(product);
 
                         Console.WriteLine("-------------------------------------");
@@ -46,12 +52,23 @@ namespace EFProductManagement
                         break;
 
                     case 2: Console.Write("Enter product id : ");
-                         id = Convert.ToInt32(Console.ReadLine());
+                        id = Convert.ToInt32(Console.ReadLine());
+                        product = repo.GetProduct(id);
 
                         Console.Write("Enter new price to be updated : ");
-                        int price = Convert.ToInt32(Console.ReadLine());
+                        product.Price = Convert.ToInt32(Console.ReadLine());
 
-                        repo.UpdateProduct(id, price);
+                        Console.Write("Enter Description : ");
+                        product.Description = Console.ReadLine();
+                        
+                        Console.Write("Enter Brand : ");
+                        product.Brand = Console.ReadLine(); 
+                        Console.Write("Enter catagory name: ");
+                        string catname = Console.ReadLine();
+
+                        product.catagory = repo.GetCatagoryByName(catname);
+                        
+                        repo.UpdateProduct(product);
 
                         Console.WriteLine("-------------------------------------");
                         Console.WriteLine("Updated successfully...");
@@ -71,9 +88,9 @@ namespace EFProductManagement
                     case 4: var result = repo.GetProducts();
 
                         Console.WriteLine("-------------------------------------");
-                        Console.WriteLine("Id \t Name\t \tPrice");
+                        Console.WriteLine("Id"+"    "+"Name" +"   "  + "Price" + "    " + " Description" + "    " +" Brand" + "    " +" Catagory");
                         foreach (var prod in result)
-                            Console.WriteLine(prod.ProductId +" \t"+prod.Name+" \t"+prod.Price);
+                            Console.WriteLine(prod.ProductId +" \t"+prod.Name+" \t"+prod.Price +"\t"+prod.Description +" \t"+prod.Brand +" \t" + prod.catagory.Name);
 
                         Console.WriteLine("-------------------------------------\n");
                         break;
@@ -90,7 +107,7 @@ namespace EFProductManagement
                         Console.WriteLine(p.ProductId + " \t" + p.Name + " \t" + p.Price);                        
                         Console.WriteLine("-------------------------------------\n");
                         break;
-
+                        
                     case 6: Console.Write("Enter product name : ");
                         string name = Console.ReadLine();
 
@@ -134,6 +151,14 @@ namespace EFProductManagement
                         Console.WriteLine("Id \t Name\tPrice");
                         foreach (var item in result)
                             Console.WriteLine(item.ProductId + " \t" + item.Name + " \t" + item.Price);
+                        Console.WriteLine("-------------------------------------\n");
+                        break;
+
+                    case 10:
+                        Console.Write("Enter Catagory name : ");
+                        catagory.Name = Console.ReadLine();
+
+                        repo.SaveCatagory(catagory);
                         Console.WriteLine("-------------------------------------\n");
                         break;
 
