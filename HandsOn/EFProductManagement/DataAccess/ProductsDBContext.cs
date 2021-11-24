@@ -16,7 +16,29 @@ namespace EFProductManagement.DataAccess
         }
         public DbSet<Product> products { get; set; } 
         public DbSet<Catagory> Catagories { get; set; }
-        public DbSet<Suppliers> Suppliers { get; set; }
+        //public DbSet<Suppliers> Suppliers { get; set; }
+
+        public DbSet<Person> People { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Customer>().Map(m =>
+            {
+                m.MapInheritedProperties();
+                m.ToTable("Customers");
+            });
+
+            modelBuilder.Entity<Supplier>().Map(m =>
+            {
+                m.MapInheritedProperties();
+                m.ToTable("Suppliers");
+            });
+
+            //modelBuilder.Entity<Customer>().MapToStoredProcedures();
+            //modelBuilder.Entity<Supplier>().MapToStoredProcedures();
+
+            modelBuilder.Types().Configure(m => m.MapToStoredProcedures());
+        }
 
     }
 }

@@ -25,7 +25,7 @@ namespace SellPhonesStore.DataAccess
 
         public List<CustomerOrder> GetCustomerOrders(long customerId)
         {
-            var res = db.CustomerOrders.Include("customer").Where(c => c.customer.CustomerId == customerId).ToList();
+            var res = db.CustomerOrders.Include("customer").Include("orderedPhones").Where(c => c.customer.CustomerId == customerId).ToList();
             return res;
         }
 
@@ -52,7 +52,9 @@ namespace SellPhonesStore.DataAccess
 
         public long SaveOrderedPhone(OrderedPhone orderPhone, long orderId)
         {
-            db.OrderedPhones.Add(orderPhone);
+            var res = db.CustomerOrders.Find(orderId);
+            res.orderedPhones.Add(orderPhone);
+           // db.OrderedPhones.Add(orderPhone);
             db.SaveChanges();
             return orderPhone.OrderPhoneId;
         }

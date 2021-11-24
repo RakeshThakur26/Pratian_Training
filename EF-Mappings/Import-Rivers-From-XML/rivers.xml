@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rivers>
+	<river>
+		<name>MAritsa</name>
+		<length>480</length>
+		<outflow>Aegean Sea</outflow>
+		<countries>
+			<country>Bulgaria</country>
+		</countries>
+	</river>
+	
+	
+</rivers>

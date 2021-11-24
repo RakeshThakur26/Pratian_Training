@@ -21,6 +21,6 @@ namespace EFProductManagement.Entities
         public string Description { get; set; }
         public string Brand { get; set; }
         public Catagory catagory { get; set; } 
-        public virtual List<Suppliers> Suppliers { get; set; }
+        public virtual List<Supplier> Suppliers { get; set; }
     }
 }

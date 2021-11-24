@@ -11,7 +11,6 @@
         {
             AutomaticMigrationsEnabled = true;
             AutomaticMigrationDataLossAllowed = true;
-            ContextKey = "EFProductManagement.DataAccess.ProductsDBContext";
         }
 
         protected override void Seed(EFProductManagement.DataAccess.ProductsDBContext context)

@@ -2,15 +2,6 @@
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="EFProductManagement.Entities.Product">
     <Position X="0.5" Y="0.5" Width="1.5" />
-    <AssociationLine Name="Suppliers" Type="EFProductManagement.Entities.Suppliers" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="2" Y="2.115" />
-        <Point X="2.375" Y="2.115" />
-        <Point X="2.375" Y="4.94" />
-        <Point X="5.125" Y="4.94" />
-        <Point X="5.125" Y="4.565" />
-      </Path>
-    </AssociationLine>
     <TypeIdentifier>
       <HashCode>EAAAAAAAAQAgAIAAAAAAAAQAAAAAAAAAAAAAAAABAAA=</HashCode>
       <FileName>Entities\Product.cs</FileName>
@@ -33,9 +24,36 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="EFProductManagement.Entities.Suppliers">
-    <Position X="4" Y="2.5" Width="1.5" />
+    <Position X="3" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAAAAAAAAQAAAAAAACCAAAAAAAgAAQ=</HashCode>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAACCAAAAAAAgAAQ=</HashCode>
+      <FileName>Entities\Suppliers.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Address" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EFProductManagement.Entities.Person">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAg=</HashCode>
+      <FileName>Entities\Person.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EFProductManagement.Entities.Customer">
+    <Position X="7.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAwAAAAAAAAA=</HashCode>
+      <FileName>Entities\Customer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Address" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EFProductManagement.Entities.Address">
+    <Position X="5.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABIAAAAAAAAAAIAAAAAAAAAAQAAAAA=</HashCode>
       <FileName>Entities\Suppliers.cs</FileName>
     </TypeIdentifier>
   </Class>

@@ -8,11 +8,12 @@ using System.Threading.Tasks;
 
 namespace EFProductManagement.Entities
 {
-    public class Suppliers
+    //[Table("Suppliers")]// Table per type
+    public class Supplier : Person
     {
         [Key]
-        public int SupplierId { get; set; }
-        public string Name { get; set; }
+        //public int SupplierId { get; set; }
+      //  public string Name { get; set; }
         public string Mobile { get; set; }
         public string Email { get; set; }
 
@@ -20,6 +21,7 @@ namespace EFProductManagement.Entities
 
         public virtual List<Product> Products { get; set; } = new List<Product>();
     }
+
     [ComplexType]
     public class Address
     {

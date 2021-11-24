@@ -14,7 +14,7 @@ namespace SellPhonesStore.Entities
         public DateTime OrderDate { get; set; }
         public Customer customer { get; set; }
         public float OrderTotal { get; set; }
-        public List<OrderedPhone> orderedPhones { get; set; }
+        public List<OrderedPhone> orderedPhones { get; set; } = new List<OrderedPhone>();
 
     }
 }
