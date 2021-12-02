@@ -7,37 +7,30 @@ using System.Threading.Tasks;
 
 namespace SearchEngine
 {
-    class Level2
+    public class Level2
     {
         public static int found = 0;
-        public static void SearchFile(string fname, DriveInfo[] drives)
+        public static int SearchFile(string fname, DriveInfo[] drives)
         {
             Parallel.ForEach(drives, drive =>
             {
                 if (check(drive.Name, fname))
-                    return;
+                    Loop(drive.Name, fname);
                 else
                 {
-                    if (Loop(drive.Name, fname))
-                        return;
+                    Loop(drive.Name, fname);                       
                 }
             });
 
-            try
-            {
                 if (found == 0)
                     throw new FileNotFoundException("The searching file is not found..");
-            }
-            catch (FileNotFoundException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            
+            return found;
             
         }
 
         public static bool Loop(string path, string fname)
-        {
-           
+        {           
             try
             {
                 if (check(path, fname))

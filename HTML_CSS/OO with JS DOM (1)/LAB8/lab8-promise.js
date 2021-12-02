@@ -17,6 +17,7 @@ let myPromise = new Promise(function(myResolved, myRejected) {
     for(var i=0; i<items.length; i++){
         if(!items[i].textContent.includes("Veg")) {
             checkVeg = false;
+            break;
         }
     }
 

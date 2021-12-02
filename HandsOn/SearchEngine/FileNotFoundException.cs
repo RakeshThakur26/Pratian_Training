@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SearchEngine
 {
-    class FileNotFoundException : Exception
+    public class FileNotFoundException : Exception
     {
         public FileNotFoundException(string msg) : base(msg)
         {

@@ -1,0 +1,180 @@
+CSS describes how HTMl elements are to be displayed
+
+CSS Box model:
+content: content of the Box
+padding: are around the content
+border: around padding and content
+margins: Outisde the border
+
+h1 {
+    background-color: blue
+}
+Selector: h1
+property: background-color
+value: blue
+
+Selectors:
+1. Element:
+p {
+    ...
+}
+
+2. Class:
+.class-name {
+    ...
+}
+
+3. Id:
+#idName {
+    ...
+}
+
+4. Universal: for entire doc
+* {
+    ...
+}
+
+5. Group Selector:
+h1, h2, p {
+
+}
+
+6. Descendant Selector:
+div p {
+    ...
+}
+Selects all the <p> element inside <div> element
+
+Ways to insert CSS:
+Inline
+Internal
+External
+
+Inline Style overwrite the other style
+
+HTML color:
+hex code, rgb (red, green, blue), hsl (hue, saturation, lightness)
+Hue: Degree of the color wheel from 0 to 360. 0: red, 120: green, 240: blue
+Saturation: 0% shade of gray
+100% full color
+Lightness: 0%: black, 50%: neither black nor dark, 100%: white
+
+Color with transparency: rgba, hsla
+
+Opacity (transparency):
+(0.0 - 1.0).
+Lower the value, the more transparent it will be
+
+Background:
+background-Image: url("./image.png");
+
+Border:
+Border-width, Border Style, Border-color
+p {
+    border: 5px solid blue;
+}
+
+Margin:
+Four value: Top, Right, Bottom, Left
+p {
+    margin: 25px 50px 75px 100px
+}
+Three value: top, right&left, bottom
+p {
+    margin: 25px 50px 75px
+}
+Two value: Top&bottom, Right&left
+p {
+    margin: 25px 50px
+}
+One value: All sides
+p{
+    margin: 25px
+}
+
+Padding: Create space around the element's content & element's border
+
+Text-Decoration:
+Used to set or remove the decoration from the Text
+h2 {
+    text-decoration: overline
+}
+h2 {
+    text-decoration: line-through
+}
+h2 {
+    text-decoration: underline
+}
+h2 {
+    text-decoration: none
+}
+
+Text Transformation:
+p {
+    text-transform: uppercase; /* lowercase, capitalize */
+}
+
+CSS fonts:
+Family:
+p {
+    font-family: "Times New Roman", serif;
+}
+Style:
+p {
+    font-style: italic; /* normal, oblique */
+}
+Size:
+p {
+    font-size: 40px;
+}
+
+Z-index:
+Specify the stack order of the elements (ie., which elemnt should be placed in front or behind)
+img {
+    postion: absolute,
+    left: 0px,
+    top: 0px,
+    z-index: -1
+}
+
+Overflow:
+div {
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    overflow-y: scroll; /* Add a vertical scroll bar */
+}
+
+Pseudo-Classes:
+Used to define a special state of an element.
+a:link {
+    color: blue;
+}
+a:visited {
+    color: red;
+}
+a:hover {
+    color: yellow;
+}
+a:active {
+    color: green;
+}
+
+CSS Units:
+em: Relative to the font-size of the element (2em means 2 times the size of the current font)
+ex: Relative to the x-height of the curremt font
+ch: Relative to the width of zero.
+rem: Relative to the font-size of the root element
+vw: Relative to 1% of the width of viewpoint
+vh: Relative to 1% of the height of viewpoint
+vmin: Relative to 1% of the viewpoint's smaller dimension
+vmax: Relative to 1% of the viewpoint's larger dimension
+%: Relative to the parent element
+
+!important rule:
+Add importance to the property than the normal such that it will override all the previous style.
+
+CSS Math:
+1. width: calc(100% - 100px)
+2. width: max(70%, 450px)
+3. width: min(70%, 450px)
+
+CSS ADVANCED: (Transition, Animation, etc.)

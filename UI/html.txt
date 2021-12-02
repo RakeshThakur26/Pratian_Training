@@ -1,0 +1,15 @@
+
+
+root : <html></html>
+
+head : <head> </head>
+
+body : <body></body>
+
+heading : <h1></h1>
+
+Image : <img />
+
+Paragraph : <p> </p>
+
+line break : <br>
