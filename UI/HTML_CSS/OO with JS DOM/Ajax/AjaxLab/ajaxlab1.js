@@ -38,4 +38,5 @@ function render(data){
         htmlstring += "<p style=\"color:red\">" + data.title + "</p>"
     }
     container.insertAdjacentHTML("beforeend",htmlstring);    
+    
 }

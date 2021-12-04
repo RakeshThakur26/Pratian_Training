@@ -1,23 +1,46 @@
 [
     {
-        "src": "C:\\Pratian_Training\\UI\\HTML_CSS\\OO with JS DOM\\JqueryLab\\assets\\hyundai-creta.jpg",
+        "src": "https://th.bing.com/th/id/OIP.ubi19LkJsWwZ5pGZ-bpanQHaE_?pid=ImgDet&rs=1",
         "carName": "Hyundai Creta",
         "model": 2020,
         "price": "983000",
-        "used": "Have used for 5 months"
+        "desc": "Have used for 5 months"
     },
     {
-        "src": "C:\\Pratian_Training\\UI\\HTML_CSS\\OO with JS DOM\\JqueryLab\\assets\\hyundai-creta.jpg",
+        "src": "https://th.bing.com/th/id/R.017b813fade42f9a49a07931c9d0b422?rik=j7qPcdKmUWTeTw&riu=http%3a%2f%2fgearopen.com%2fwp-content%2fuploads%2f2019%2f07%2fkia-seltos-tall.jpg&ehk=eCAeRNPfPKHgMGNn2AxkHcBGsWhT0EIYruD6TyHhCJI%3d&risl=&pid=ImgRaw&r=0",
         "carName": "Kia Seltos",
         "model": 2018,
         "price": "989000",
-        "used": "Have used for 2 years"
+        "desc": "Have used for 2 years"
     },
     {
-        "src": "C:\\Pratian_Training\\UI\\HTML_CSS\\OO with JS DOM\\JqueryLab\\assets\\hyundai-creta.jpg",
+        "src": "https://th.bing.com/th/id/OIP.7EZwFz0WbJx9GLYg_cSrOgHaEK?pid=ImgDet&rs=1",
         "carName": "Mahindra Thar",
         "model": 2017,
         "price": "980000",
-        "used": "Have used for 5 months"
+        "desc": "Have used for 5 months"
+    }
+    ,
+    {
+        "src": "https://cdni.autocarindia.com/ExtraImages/20210312124940_Triber_2.jpg",
+        "carName": "Renault Triber",
+        "model": 2019,
+        "price": "580000",
+        "desc": "Have used for 2 years"
+    }
+    ,
+    {
+        "src": "https://th.bing.com/th/id/OIP.I7j4xDXirfOY0U9m-HkEDgHaE8?pid=ImgDet&rs=1",
+        "carName": "Renault Duster",
+        "model": 2017,
+        "price": "880000",
+        "desc": "Have used for 4 years"
+    } ,
+    {
+        "src": "https://th.bing.com/th/id/OIP.4a4XSjLNoAUsI9DZzvDJ0gHaEK?pid=ImgDet&rs=1",
+        "carName": "Tata Harrier XE",
+        "model": 2020,
+        "price": "1380000",
+        "desc": "Have used for 3 months"
     }
 ]
