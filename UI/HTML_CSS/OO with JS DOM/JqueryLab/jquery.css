@@ -14,3 +14,21 @@
 #row21{
     background-color: indianred;
 }
+
+.framediv{
+    width: 70%;
+    border: 2px solid black;
+    background: transparent;
+    padding: auto;
+    border-radius: 2%;
+}
+
+#framebody{
+    margin: 0;
+    padding: 2px;
+}
+img{
+   
+    border: 2px solid rgb(20, 13, 13);
+    border-radius: 5%;
+}

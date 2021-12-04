@@ -1,0 +1,23 @@
+[
+    {
+        "src": "C:\\Pratian_Training\\UI\\HTML_CSS\\OO with JS DOM\\JqueryLab\\assets\\hyundai-creta.jpg",
+        "carName": "Hyundai Creta",
+        "model": 2020,
+        "price": "983000",
+        "used": "Have used for 5 months"
+    },
+    {
+        "src": "C:\\Pratian_Training\\UI\\HTML_CSS\\OO with JS DOM\\JqueryLab\\assets\\hyundai-creta.jpg",
+        "carName": "Kia Seltos",
+        "model": 2018,
+        "price": "989000",
+        "used": "Have used for 2 years"
+    },
+    {
+        "src": "C:\\Pratian_Training\\UI\\HTML_CSS\\OO with JS DOM\\JqueryLab\\assets\\hyundai-creta.jpg",
+        "carName": "Mahindra Thar",
+        "model": 2017,
+        "price": "980000",
+        "used": "Have used for 5 months"
+    }
+]
