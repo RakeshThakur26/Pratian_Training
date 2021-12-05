@@ -2,15 +2,15 @@
 
 import { Democlass } from "./democlass";
 
-// function sum(... args) : number{
-//     var total: number=0;
-//     args.map((val) =>{
-//         total+=val;
-//     }) ;
-//     return total;
-// }
+function sum(... args) : number{
+    var total: number=0;
+    args.map((val) =>{
+        total+=val;
+    }) ;
+    return total;    
+}
 
-// console.log(sum(1,2,3,4,5,6));
+console.log(sum(1,2,3,4,5,6));
 
 
 // interface Filter{
@@ -27,5 +27,5 @@ import { Democlass } from "./democlass";
 
 // console.log(filtervalue.filter(12,3,4,5,6,7,8,9,7,4))
 
-let dataobj:Democlass = new Democlass("TypeScript", 123, "In-progress");
-dataobj.showTopic();
+// let dataobj:Democlass = new Democlass("TypeScript", 123, "In-progress");
+// dataobj.showTopic();

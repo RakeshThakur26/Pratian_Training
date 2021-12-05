@@ -50,17 +50,18 @@ company1.setDepartment(dep2);
 let companies:Company[]=[];
 companies.push(company1);
 
-for(var i=0; i<companies.length; i++ ){
-    console.log("Company name : " + companies[i].getCName());
-    for(var j=0; j < companies[i].departments.length; j++)
-    {
-        console.log("\tDepartment : "+ companies[i].departments[j].getdName());
-        console.log("-------------------------------")
-        for(var k=0; k < companies[i].departments[j].employees.length; k++){
-            console.log("\t\tEmployee name: " + companies[i].departments[j].employees[k].name +", Title : "+companies[i].departments[j].employees[k].getTitle())
-        }
-    }
-    console.log("*********************************************************")
-}
+// for(var i=0; i<companies.length; i++ ){
+//     console.log("Company name : " + companies[i].getCName());
+//     for(var j=0; j < companies[i].departments.length; j++)
+//     {
+//         console.log("\tDepartment : "+ companies[i].departments[j].getdName());
+//         console.log("-------------------------------")
+//         for(var k=0; k < companies[i].departments[j].employees.length; k++){
+//             console.log("\t\tEmployee name: " + companies[i].departments[j].employees[k].name +", Title : "+companies[i].departments[j].employees[k].getTitle())
+//         }
+//     }
+//     console.log("*********************************************************")
+// }
+
 
 
