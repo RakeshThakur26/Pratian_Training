@@ -1,9 +1,11 @@
 import { Customer } from "./Customer";
+import { Item } from "./Item";
 import { Order } from "./Order";
 
 export class Company{
     Cname:string;
     customers:Customer[] =[];
+    items:Item[] = [];
 
     constructor(_name:string){
         this.Cname = _name;
@@ -12,6 +14,24 @@ export class Company{
     getName():string{
         return this.Cname;
     }
+
+    setCustomer(_customer:Customer){
+        this.customers.push(_customer);
+    }
+
+    getCustomers():Customer[]{
+        return this.customers;
+    }
+
+    setItem(_item:Item){
+        this.items.push(_item);
+    }
+
+    getItems():Item[]{
+        return this.items;
+    }
+
+
 
     getCustomerById(id:number):Customer {
         // this.customers.map((customer) => {

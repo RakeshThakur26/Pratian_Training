@@ -4,10 +4,23 @@ exports.Company = void 0;
 var Company = /** @class */ (function () {
     function Company(_name) {
         this.customers = [];
+        this.items = [];
         this.Cname = _name;
     }
     Company.prototype.getName = function () {
         return this.Cname;
+    };
+    Company.prototype.setCustomer = function (_customer) {
+        this.customers.push(_customer);
+    };
+    Company.prototype.getCustomers = function () {
+        return this.customers;
+    };
+    Company.prototype.setItem = function (_item) {
+        this.items.push(_item);
+    };
+    Company.prototype.getItems = function () {
+        return this.items;
     };
     Company.prototype.getCustomerById = function (id) {
         // this.customers.map((customer) => {

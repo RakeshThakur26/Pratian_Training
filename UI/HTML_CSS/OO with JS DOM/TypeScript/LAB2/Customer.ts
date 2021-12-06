@@ -1,3 +1,4 @@
+import { IdGenerator } from "./IdGenerator";
 import { Order } from "./Order";
 
 export class Customer {
@@ -8,7 +9,7 @@ export class Customer {
 
     constructor(_name: string) {
         this.custName = _name;
-        //    this.customerId = IdGenerator.customerId;
+        this.customerId = IdGenerator.getCustomerId();
         this.className = "Customer";
     }
 

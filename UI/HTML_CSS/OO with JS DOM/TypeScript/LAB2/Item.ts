@@ -1,3 +1,4 @@
+import { IdGenerator } from "./IdGenerator";
 
 export class Item{
     itemId:number;
@@ -7,7 +8,7 @@ export class Item{
     constructor(_price:number, _description:string){
         this.description = _description;
         this.price = _price;
-        //this.itemId = IdGenerator.itemId;
+        this.itemId = IdGenerator.getItemId();
     }
 
     getItemId():number{

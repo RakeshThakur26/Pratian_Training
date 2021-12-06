@@ -1,3 +1,4 @@
+import { IdGenerator } from "./IdGenerator";
 import { OrderItem } from "./OrderItem";
 
 export class Order{
@@ -5,7 +6,7 @@ export class Order{
     orderItems:OrderItem[] = [];
 
     constructor(){
-       // this.orderId=IdGenerator.orderId;
+        this.orderId=IdGenerator.getOrderId();
     }
 
     getOrderId():number{

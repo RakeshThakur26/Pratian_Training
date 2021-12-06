@@ -1,11 +1,12 @@
 "use strict";
 exports.__esModule = true;
 exports.Customer = void 0;
+var IdGenerator_1 = require("./IdGenerator");
 var Customer = /** @class */ (function () {
     function Customer(_name) {
         this.orders = [];
         this.custName = _name;
-        //    this.customerId = IdGenerator.customerId;
+        this.customerId = IdGenerator_1.IdGenerator.getCustomerId();
         this.className = "Customer";
     }
     Customer.prototype.getCustomerId = function () {
