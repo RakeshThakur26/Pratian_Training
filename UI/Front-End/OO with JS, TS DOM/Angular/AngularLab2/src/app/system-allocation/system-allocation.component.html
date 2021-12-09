@@ -1,0 +1,41 @@
+<div class="container">
+    <table class="table" style="text-align: center;">
+        <thead class="thead-dark" style="background-color: black; color: white;">
+          <tr>
+            <th scope="col">Employee Name</th>
+            <th scope="col">Employee Status</th>
+            <th scope="col">Employee Request</th>
+            <th scope="col">System Name</th>
+            <th scope="col">System Model</th>
+          </tr>
+        </thead>
+        <tbody style="background-color: thistle;">
+           <tr *ngFor = "let emp of employees">
+            <th scope="row">{{emp.Ename}}</th>
+            <td [class] = 'emp.status'>{{emp.Estatus}}</td>
+            <td [class] = 'emp.req'>{{emp.Erequest}}</td>
+            <td>{{emp.Asyst.system_name}}</td>
+            <td>{{emp.Asyst.system_model}}</td>           
+          </tr>
+          <!-- <tr>
+            <th scope="row">{{employees[1].Ename}}</th>
+            <td [class] = 'employees[1].status'>{{employees[1].Estatus}}</td>
+            <td>{{employees[1].Erequest}}</td>
+            <td>{{employees[1].Asyst.system_name}}</td>
+            <td>{{employees[1].Asyst.system_model}}</td>           
+          </tr>
+         
+          
+
+          <tr >
+            <th scope="row">{{employees[2].Ename}}</th>
+            <td [class] = 'employees[2].status'>{{employees[2].Estatus}}</td>
+            <td>{{employees[2].Erequest}}</td>
+            <td>{{employees[2].Asyst.system_name}}</td>
+            <td>{{employees[2].Asyst.system_model}}</td>           
+          </tr> -->
+        </tbody>
+      </table>
+      
+     
+</div>

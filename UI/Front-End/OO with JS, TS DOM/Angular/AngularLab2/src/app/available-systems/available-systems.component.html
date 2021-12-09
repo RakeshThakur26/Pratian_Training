@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="container"> 
+        <table class="table" style="text-align: center; border: 2px solid black; ">
+            <thead class="thead-dark" style="background-color: black; color: white;">
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Model</th>             
+              </tr>
+            </thead>
+
+            <tbody style="background-color:wheat;">
+               <tr *ngFor = "let syst of systems">                
+                <td >{{ syst.system_name}}</td>                   
+                <td >{{ syst.system_model}}</td>                   
+              </tr>
+            
+            </tbody>
+          </table>
+          
+         
+    </div>
+    
+</div>

@@ -1,0 +1,32 @@
+<div class="container">
+    <h2>Event Binding</h2>
+
+    <!-- <Label for="Ename">Enter Full Name: </Label>
+    <input type="text" name="" id="Ename" [value]='EmpName' (input)="employeeNameFun($event)">
+<br>
+    <Label for="Eproject">Enter project</Label>
+    <input type="text" name="" id="Eproject" [value]='EmpProj' (input)="employeeProjFun($event)"> -->
+
+    <Label for="Ename">Enter Full Name: </Label>
+    <input type="text" name="" id="Ename" [(ngModel)]= "emp.name">
+<br>
+    <Label for="Eproject">Enter project: </Label>
+    <input type="text" name="" id="Eproject" [(ngModel)]= "emp.project">
+    
+    <br>
+    
+    <Label for="Eproject">Status: </Label>
+<select style="width: 280px" id="Mobility" name="Mobility" [(ngModel)]= "emp.status">
+    <option selected="">Please Select</option>
+    <option>Open</option>
+    <option>In-progress</option>
+    <option>Closed</option>
+</select>
+<br>
+
+<button type="submit" (click) = "clickFun()">Submit</button>
+<br>
+<span>Name : {{ emp.name }}</span>
+<br>
+<span>Project : {{ emp.project }}</span>
+</div>

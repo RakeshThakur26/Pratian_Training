@@ -1,0 +1,21 @@
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Project</th>
+            <th scope="col">Status</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr [style.backgroundColor]="CheckStatus">
+            <th scope="row">{{ emp.name }}</th>
+            <td>{{ emp.project }}</td>
+            <!-- <td *ngIf="emp.status == 'In-progress'? 'yellow' : 'green'">{{ emp.status }}</td>            -->
+            <td >{{ emp.status }}</td>           
+          </tr>
+         
+        </tbody>
+      </table>
+</div>

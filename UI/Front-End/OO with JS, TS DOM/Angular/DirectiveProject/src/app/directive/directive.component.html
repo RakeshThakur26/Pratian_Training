@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>If-else Directive</h2>
+
+    <h5 *ngIf='true'>This is If-true directive</h5>
+
+    <h5 *ngIf='check; else alternative'>True block</h5>
+    <ng-template #alternative>
+        False block
+    </ng-template>
+
+    <br><br>
+    <input type="text" name="" id="" [(ngModel)] = 'input'>
+    <p *ngIf = 'input % 2 == 0; then even; else odd '></p>
+
+    <ng-template #even>
+       {{ input }} is Even
+    </ng-template>
+    
+    <ng-template #odd>
+       {{ input }} is odd
+    </ng-template>
+
+
+    
+</div>

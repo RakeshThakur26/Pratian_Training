@@ -1,0 +1,9 @@
+<div class="container">
+    <p>Pipe percentage : {{ total | percent: "12.2-14"}}</p>
+    <br>
+    <p>Pipe Currency : {{ total | currency:'INR' : 'symbol': '4.1-3'}}</p>
+
+    <br>
+
+    <span *ngFor="let num of arr"> <p *If='num % 2 == 0'> {{ num }} <br></p></span>
+</div>

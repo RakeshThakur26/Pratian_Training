@@ -1,0 +1,37 @@
+<div class="container">
+
+    <h3 style="text-align: center">Pipe Demo - Date</h3>
+
+    <h6>{{ today }}</h6>
+    <br /><br />
+    <p>
+        Short Format: {{ today | date: "short" }}
+        <br />
+        Medium Format: {{ today | date: "medium" }}
+        <br />
+        Long Format: {{ today | date: "long" }}
+        <br />
+        Full Format: {{ today | date: "full" }}
+        
+        <br /><br />
+
+        Short Date: {{ today | date: "shortDate" }}
+        <br />
+        Medium Date: {{ today | date: "mediumDate" }}
+        <br />
+        Long Date: {{ today | date: "longDate" }}        <br />
+
+        Full Date: {{ today | date: "fullDate" }} <br /><br />
+
+
+        Short Time Format: {{ today | date: "shortTime" }}
+        <br />
+        Medium Time Format: {{ today | date: "mediumTime" }}
+        <br />
+        Long Time Format: {{ today | date: "longTime" }}
+        <br />
+        Full Time Format: {{ today | date: "fullTime" }} <br /><br />
+
+    </p>
+
+</div>
